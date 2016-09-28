@@ -2,7 +2,7 @@
 /dist
 /.tmp
 /.sass-cache
-bower_components
+bower_components/
 /__MACOSX
 .DS_Store
 
