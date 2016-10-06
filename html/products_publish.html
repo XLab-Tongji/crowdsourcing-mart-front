@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-cn">
+		<title>products_publish</title>
+	 	<meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Bootstrap -->
+        <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/index.css" rel="stylesheet">
+        <link href="../css/animate.min.css" rel="stylesheet">
+        <link href="../css/products_publish.css" rel="stylesheet">
+
+        <link href="../bower_components/bootstrap/dist/css/bootstrap-select.css"  rel="stylesheet">
+
+        <!-- <link href="css/style.css" rel="stylesheet"> -->
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+</head>
+<body>
+<div class="navbar-wrapper">
+            <nav class="navbar navbar-default" role="navigation" style="background: transparent;">
+                <div class="container">
+                    <div class="navbar-header page-scroll">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar">home</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="../index.html">SCS</a>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav navbar-left">
+                            <li><a class="page-scroll pull-left" href="projects.html">Projects</a></li>  
+                            <li><a class="page-scroll" href="#team">Features</a></li>  
+                            <li><a class="page-scroll" href="#team">Team</a></li>
+                            <li><a class="page-scroll" href="#testimonials">Testimonials</a></li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                            <li><a class="page-scroll" href="html/login.html">My Account</a></li>
+                            <!-- <li><a class="page-scroll"  href="html/login.html">注册</a></li> -->
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+</div>
+<div>
+	<div class="navbar-wrapper ">
+		<div class="publish_navbar container col-md-10" style="position: relative;text-align: center;">
+			<h3 class="publish_title">发布需求</h3>
+			<div class="container" style="height:150px;width:300px;margin:0 auto; margin-top: 50px;" >
+				<nav class="publish_steps container" style="text-align: center;">
+					<br>
+					<div class="products_info" style="width: 70px; float: left;">
+						<strong class="publish_info_icon">
+							<i>1</i>
+						</strong>
+						<label class="publish_info_name" style="text-align: center;">项目信息</label>
+					</div>
+					<div style="float: left; width: 100px;">------</div>
+					<div class="products_confirm" style="width: 110px; float: left;">
+						<strong class="publish_confirm_icon">
+							<i>2</i>
+						</strong>
+						<label class="publish_info_name" style="text-align: center;">确认信息与付款</label>
+					</div>
+				</nav>
+			</div>
+		</div>
+	
+		<div class="publish_component container">
+			<div class="lablecell_name container col-md-3 col-md-offset-2">
+				<div class="lablebody">
+					<label class= "publish_step_title">项目名称</label>
+					<div><small class="publish_step_describe">请取一个简洁明了的名字</small></div>
+				</div>
+			</div>
+			<div class="lablecell_input">
+				<div class="lablebody">
+					<input class="name_input" maxlength="30" placeholder="30个字符以内"
+					value="" type="text">
+				</div>
+			</div>
+		</div>
+		<div class="publish_component container">
+			<br><br>
+			<div class="lablecell_name  container col-md-3 col-md-offset-2">
+				<div class="lablebody">
+					<label class= "publish_step_title">项目行业</label>
+					<div><small>请选择所属行业，最多三个</small></div>
+				</div>
+			</div>
+			<form class="form-horizontal container" style="margin-left: 0;" role="form">
+	    		<div class="form-group">
+						 <div class="col-md-4" style="padding: 0;">
+	        			 <select id="maxOption3" class="selectpicker show-menu-arrow form-control" multiple data-max-options="3">
+	        			 <li data-original-index="1" class=""><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="text">turkey</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li>
+	         				 <option>Web</option>
+	         				 <option>全栈</option>
+	          				 <option>IOS</option>
+	          				 <option>Android</option>
+	        			</select>  				
+	        			</div>
+	    		</div>
+	  		</form>
+		</div>
+		<div class="publish_component container">
+		<br><br>
+			<div class="lablecell_name container col-md-3 col-md-offset-2">
+				<div class="lablebody">
+					<label class= "publish_step_title">招募人数</label>
+					<div><small>请根据您的项目规模填写合适的人数</small></div>
+				</div>
+			</div>
+			<div class="lablecell_input">
+				<div class="lablebody">
+					<input maxlength="3" type="text" value>
+					<span>人</span>
+				</div>
+			</div>
+		</div>
+		<div class="publish_component container">
+		<br><br>
+			<div class="lablecell_name container col-md-3 col-md-offset-2">
+				<div class="lablebody">
+					<label class= "publish_step_title">项目金额</label>
+					<div><small>请根据您的项目规模和市场行价给出较为合理的预算</small></div>
+				</div>
+			</div>
+			<div class="lablecell_input">
+				<div class="lablebody">
+					<input maxlength="3" type="text" value>
+					<span>元</span>
+				</div>
+			</div>
+		</div>
+		
+		<div class="publish_component container">
+		<br><br>
+			<div class="lablecell_name container col-md-3 col-md-offset-2">
+				<div class="lablebody">
+					<label class= "publish_step_title">交付周期</label>
+					<div><small>请您填写您期望的项目最终交付的自然日天数（最好考虑工作日）</small></div>
+				</div>
+			</div>
+			<div class="lablecell_input"> 
+				<div class="lablebody">
+					<input maxlength="3" type="text" value>
+					<span>天</span>
+				</div>
+			</div>
+		</div>
+		<div class="publish_component container">
+		<br><br>
+			<div class="lablecell_name container col-md-3 col-md-offset-2">
+				<div class="lablebody">
+					<label class= "publish_step_title">质保期</label>
+					<div><small>请您填写您期望的项目最终交付的自然日天数（最好考虑节假日）</small></div>
+				</div>
+			</div>
+			<div class="lablecell_input"> 
+				<div class="lablebody">
+					<select>
+						<option value="0">0天</option>
+						<option value="7">7天</option>
+						<option value="15">15天</option>
+						<option value="30">30天</option>
+						<option value="60">60天</option>
+						<option value="90">90天</option>
+					</select>
+				</div>
+			</div>
+		</div>
+		<div class="publish_component container">
+		<br><br>
+			<div class="lablecell_name container col-md-3 col-md-offset-2">
+				<div class="lablebody">
+					<label class= "publish_step_title">项目描述</label>
+					<div><small>请您详细描述您的项目内容，以便开发者更好的了解</small></div>
+				</div>
+			</div>
+			<div class="lablecell_input col-md-3" style="padding: 0;"> 
+				<div class="lablebody " >
+					<div >
+						<label>需求描述</label>
+						<span class="example_show">
+							收起范例
+						</span>
+					</div>
+					<div class="project_detail">
+						<p>
+							<strong>简介</strong>
+						<!-- text -->
+						"我是一段简介"
+						</p>
+						<p>
+							<strong>功能需求</strong>
+						<!-- text -->
+						"我是一段功能需求"
+						</p>
+					
+						<p>
+						<strong>架构</strong>
+						<!-- text -->
+						"我是一段架构"
+						</p>
+					</div>
+						
+					
+				</div>
+				<div>
+					<textarea class="area_text" placeholder="最多可输入500字" rows="9" style="height: 157px;"></textarea>
+				</div>
+			</div>
+		</div>
+		<div class="publish_component container">
+		<br><br>
+			<div class="lablecell_name container col-md-3 col-md-offset-2">
+				
+			</div>
+			<div class="lablecell_input"> 
+				<div class="lablebody">
+					<button class="btn btn-success">下一步</button>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../bower_components/bootstrap/dist/js/bootstrap-select.min.js"></script>
+<script src="../bower_components/bootstrap/dist/js/i18n/defaults-*.js"></script>
+<script src="../js/bootstrap-carousel.js"></script>
+</body>
+</html>

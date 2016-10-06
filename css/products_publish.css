@@ -1,0 +1,18 @@
+.publish_step_title{
+	font-size: 22px;
+}
+.publish_step_describe{
+	color:gray;
+}
+.project_detail{
+	border: 1px solid black;
+	border-radius: 5px;
+	height: 200px;
+	width: 300px;
+	padding: 15px;
+	margin-bottom: 20px;
+}
+.area_text{
+	height: 200px;
+	width: 300px;
+}
