@@ -7,55 +7,76 @@
         <title>Project</title>
         <!-- Bootstrap -->
         <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link href="../css/index.css" rel="stylesheet">
-        <link href="../css/animate.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="../css/login.css" />
+        <link href="../bower_components/bootstrap/dist/css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/linearicons.css" rel="stylesheet">
+        <!--=== plugins ===-->
+        <link href="../css/owl.carousel.css" rel="stylesheet">
+        <link href="../css/owl.theme.css" rel="stylesheet">
+        <!--=== end plugins ===-->
+        <link href="../css/style.css" rel="stylesheet">
+        <link href="../css/responsive.css" rel="stylesheet">
+        <link href="../js/button.js" rel="stylesheet">
         <link href="../css/projects.css" rel="stylesheet">
-        <!-- <link href="css/style.css" rel="stylesheet"> -->
-        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:/
-        <![if lt IE 9]
-        <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-        <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
+       
     </head>
-    <body class="row">
-        <div class="navbar-wrapper">
-            <nav class="navbar navbar-default" role="navigation" style="background: transparent;">
-                <div class="container">
-                    <div class="navbar-header page-scroll">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar">home</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand" href="../index.html">SCS</a>
-                    </div>
-                    <div id="navbar" class="navbar-collapse collapse">
-                        <ul class="nav navbar-nav navbar-left">
-                            <li><a class="page-scroll pull-left" href="../index.html">Home</a></li>
-                            <li><a class="page-scroll" href="#features">Features</a></li>
-                            <li><a class="page-scroll" href="#team">Team</a></li>
-                            <li><a class="page-scroll" href="#testimonials">Testimonials</a></li>
-                        </ul>
-                        <ul class="nav navbar-nav navbar-right">
+    <body>
+     <header>            
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <!-- menu 4 -->
+                    <div class="navbar navbar-default default-menu menu-4" role="navigation">
+                        <div class="container">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu-4" aria-expanded="false">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                <a class="navbar-brand default-logo" href="#">CrowdSourcing</a>
+                            </div>
+
+                            <div class="collapse navbar-collapse" id="menu-4">
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li><a class="scroll" href="../index.html">Home</a></li>
+                                    <li class="active"><a class="scroll" href="html/projects.html">Project</a></li>
+                                    <li><a class="scroll" href="#service">Service</a></li>
+                                    <li><a class="scroll" href="#team">Team</a></li>
+                                    <li><a class="scroll" href="#contact">Contact</a></li>
+                                    <li><a class="scroll" href="html/login.html">My Account<i class="fa fa-child"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div><!-- end menu -->
+                </div>
+            </div>            
+        </header>
+        <!--======== intro =========-->
+        <section class="intro">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12">
+                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                       
+
+                        <div class="carousel-inner " role="listbox">
+                            <div class="item active">
+                                <div class="intro-content text-center">
+                                    <h1>欢迎来到众包平台</h1>
+                                    <p>欢迎来到众包平台，我们将会为您提供一个完善的代码托管、检测以及交易的平台，再这个平台上，您可以赚钱、交流、玩耍，获取项目经验，成为一个成功的程序员。</p>
+                                        <a class="btn btn-primary scroll" href="html/products_publish.html" role="button">发布项目需求</a>
+                                   <!--  <a class="btn btn-primary scroll" href="html/products_publish.html" role="button">发布项目需求</a> -->
+                                        <a class="btn btn-primary scroll" href="../html/projects.html" role="button">查看项目列表</a>
+                                </div>
+                            </div>
                             
-                            <li><a class="page-scroll" href="../html/login.html">登录</a></li>
-                            <li><a class="page-scroll"  href="../html/login.html">注册</a></li>
-                        </ul>
+                        </div>
                     </div>
                 </div>
-            </nav>
-        </div>
-        <div class="container-fulid" style="background: #573d7e;height: 500px;">
-            <div class="btn-list">
-                
-                <!-- <a href="#" class="start-button">我要加入项目</a> -->
-                <!-- <img class="img-responsive" src="../images/header_one.jpg" alt="" > -->
-                <div class=" col-lg-1 col-xs-1 col-md-1 col-sm-1 col-lg-offset-3 col-xs-offset-3 col-md-offset-3 col-sm-offset-3" style="margin-top:400px;   color: white;"><a href="../html/products_publish.html"><button  class="btn btn-success">发布需求</button></a></div>
-                <div class=" col-lg-1 col-xs-1 col-md-1 col-sm-1" style="color:white;margin-top:400px;"><a href="../html/products_publish.html"><button  class="btn btn-success">完善资料</button></a></div>
             </div>
-        </div>
+        </section>
+        <!--======== end intro =========-->
+        
         <hr>
         <div class="row">
             
@@ -179,7 +200,12 @@
             </div>
         </div>
     </body>
-<script src="../bower_components/jquery/dist/jquery.min.js"></script>
-<script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="../js/bootstrap-carousel.js"></script>
+        <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="../js/login.js"></script>
+        <script src="../bower_components/jquery/dist/jquery.js"></script>
+        <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="../js/owl.carousel.min.js"></script>
+        <script src="../js/custom.js"></script>
+        <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="../js/bootstrap-carousel.js"></script>
 </html>
