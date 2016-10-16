@@ -1,8 +1,11 @@
 .publish_step_title{
 	font-size: 22px;
 }
+body{
+	background: #F4F4F4;
+}
 .publish_step_describe{
-	color:#F4F4F4;
+	background:#F4F4F4;
 }
 .project_detail{
 	border: 1px solid black;
