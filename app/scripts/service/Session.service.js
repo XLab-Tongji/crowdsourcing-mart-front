@@ -16,7 +16,7 @@ angular.module('crowdsourcing').service('SessionService',
       this.delToken = function() {
         delete $localStorage.token;
         delete $localStorage.currentUser;
-        $state.go('login');
+        $state.go('auth');
       };
 
       this.getToken = function(){

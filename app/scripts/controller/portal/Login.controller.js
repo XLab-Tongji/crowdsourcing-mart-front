@@ -19,9 +19,11 @@ app.controller('LoginController', ['$scope', '$state', 'AlertTool', 'ToasterTool
 
     }).$promise
         .then(function(data){
-            if (data.result!=null) {
-              var currentUser=data.currentUser;
-              var token=data.result;
+            if (data.result[0]!=null) {
+              var currentUser=data.result[1];
+              var token=data.result[0];
+
+
 
               SessionService.saveUser(currentUser);
               SessionService.saveToken(token);
@@ -30,9 +32,6 @@ app.controller('LoginController', ['$scope', '$state', 'AlertTool', 'ToasterTool
                 ToasterTool.error('登录失败',data.message);
             }
         });
-
-
-
     // var loginForm = {
     //   'username': name,
     //   'password': password
