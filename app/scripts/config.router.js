@@ -67,14 +67,14 @@ angular.module('crowdsourcing')
                       return $ocLazyLoad.load([
 
                         'scripts/controller/portal/Login.controller.js',
-                        'scripts/factory/Session.factory.js',
-                        'scripts/login.js',
-                        'scripts/custom.js',
-                        'styles/login.css',
-                        'styles/linearicons.css',
-                        'styles/owl.carousel.css',
-                        'styles/owl.theme.css'
-                      ]);
+                        'scripts/factory/Session.factory.js'
+                      //   'scripts/login.js',
+                      //   'scripts/custom.js',
+                      //   'styles/login.css',
+                      //   'styles/linearicons.css',
+                      //   'styles/owl.carousel.css',
+                      //   'styles/owl.theme.css'
+                         ]);
                   }]
                 }
             })
@@ -87,13 +87,13 @@ angular.module('crowdsourcing')
                       return $ocLazyLoad.load([
 
                         'scripts/controller/portal/Login.controller.js',
-                        'scripts/factory/Session.factory.js',
-                        'scripts/login.js',
-                        'scripts/custom.js',
-                        'styles/login.css',
-                        'styles/linearicons.css',
-                        'styles/owl.carousel.css',
-                        'styles/owl.theme.css'
+                        'scripts/factory/Session.factory.js'
+                        // 'scripts/login.js',
+                        // 'scripts/custom.js',
+                        // 'styles/login.css',
+                        // 'styles/linearicons.css',
+                        // 'styles/owl.carousel.css',
+                        // 'styles/owl.theme.css'
                       ]);
                   }]
                 }
