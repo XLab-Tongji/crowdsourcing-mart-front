@@ -8,7 +8,7 @@ angular.module('crowdsourcing')
         var account_base_Url = base_Url + '/account';
         return {
             login: function(headers){
-                return $resource(account_base_Url+ '/authentication', {}, {
+                return $resource(account_base_Url+ '/login', {}, {
                     'post': {
                         method: 'POST',
                         headers: headers

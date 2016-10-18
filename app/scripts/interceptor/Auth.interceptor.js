@@ -14,7 +14,7 @@ angular.module('crowdsourcing')
     ];
     function checkToken(){
       if (!$localStorage.token ) {
-				$location.path('/auth');
+				$location.path('/portal');
 				return false;
 			}else{
 				// $rootScope.currentUser = $localStorage.currentUser;

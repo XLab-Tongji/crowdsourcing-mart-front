@@ -14,17 +14,19 @@ app.controller('RegisterController', ['$scope', '$state', '$rootScope', 'AlertTo
         var username = $scope.registerUserName;
         var password = $scope.registerPassword;
         var email = $scope.registerEmail;
-        var phone = $scope.registerPhone;
+        var mobile = $scope.registerPhone;
+        var ext_params={};
 
         SessionFactory.register().post({
             'name': name,
             'username': username,
             'password': md5(password),
             'email': email,
-            'phone': phone
+            'mobile': mobile,
+            'ext_params': ext_params
         }).$promise
             .then(function(data){
-                if (data.success) {
+                if (data.result==1) {
                     ToasterTool.success('注册成功','欢迎使用SVG平台!');
                     $state.go('login');
                 }else{

@@ -52,9 +52,8 @@ angular.module('crowdsourcing')
                           'lib/libs/cbpAnimatedHeader.js',
                           // 'lib/libs/classie.js',
                           'lib/libs/wow.min.js',
-                          'lib/libs/inspinia.js',
-                          'styles/animate.css',
-                          'styles/style.css'
+                          'lib/libs/inspinia.js'
+
                       ]);
                   }]
                 }
@@ -69,9 +68,9 @@ angular.module('crowdsourcing')
                       return $ocLazyLoad.load([
 
                         'scripts/controller/portal/Login.controller.js',
-                        'scripts/factory/Session.factory.js',
-                        'styles/styles.css',
-                        'styles/styles.min.css'
+                        'scripts/factory/Session.factory.js'
+
+                        // 'styles/styles.min.css'
                       //   'scripts/login.js',
                       //   'scripts/custom.js',
                       //   'styles/login.css',
@@ -93,8 +92,8 @@ angular.module('crowdsourcing')
 
                         'scripts/controller/portal/Register.controller.js',
                         'scripts/factory/Session.factory.js',
-                        'styles/styles.css',
-                        'styles/styles.min.css'
+                        // 'styles/styles.css',
+                        // 'styles/styles.min.css'
                       ]);
                   }]
                 }
