@@ -52,7 +52,9 @@ angular.module('crowdsourcing')
                           'lib/libs/cbpAnimatedHeader.js',
                           // 'lib/libs/classie.js',
                           'lib/libs/wow.min.js',
-                          'lib/libs/inspinia.js'
+                          'lib/libs/inspinia.js',
+                          'styles/animate.css',
+                          'styles/style.css'
                       ]);
                   }]
                 }
@@ -67,7 +69,9 @@ angular.module('crowdsourcing')
                       return $ocLazyLoad.load([
 
                         'scripts/controller/portal/Login.controller.js',
-                        'scripts/factory/Session.factory.js'
+                        'scripts/factory/Session.factory.js',
+                        'styles/styles.css',
+                        'styles/styles.min.css'
                       //   'scripts/login.js',
                       //   'scripts/custom.js',
                       //   'styles/login.css',
@@ -81,51 +85,21 @@ angular.module('crowdsourcing')
             .state('signup', {
                 url: "/signup",
                 templateUrl: "views/portal/signup.html",
+                controller:'RegisterController',
                 data: { pageTitle: '注册', specialClass: 'landing-page' },
                 resolve: {
                   controller: ['$ocLazyLoad', function($ocLazyLoad) {
                       return $ocLazyLoad.load([
 
                         'scripts/controller/portal/Login.controller.js',
-                        'scripts/factory/Session.factory.js'
-                        // 'scripts/login.js',
-                        // 'scripts/custom.js',
-                        // 'styles/login.css',
-                        // 'styles/linearicons.css',
-                        // 'styles/owl.carousel.css',
-                        // 'styles/owl.theme.css'
+                        'scripts/factory/Session.factory.js',
+                        'styles/styles.css',
+                        'styles/styles.min.css'
                       ]);
                   }]
                 }
             })
-            // .state('login', {
-            //     url: "/login",
-            //     controller:'LoginController',
-            //     templateUrl: "views/portal/login.html",
-            //     data: { pageTitle: '登录', specialClass: 'gray-bg'},
-            //     resolve: {
-            //       controller: ['$ocLazyLoad', function($ocLazyLoad) {
-            //           return $ocLazyLoad.load([
-            //               'scripts/controller/portal/Login.controller.js',
-            //               'scripts/factory/Session.factory.js',
-            //           ]);
-            //       }]
-            //     }
-            // })
-            // .state('register', {
-            //     url: "/register",
-            //     controller:'RegisterController',
-            //     templateUrl: "views/portal/register.html",
-            //     data: { pageTitle: '注册', specialClass: 'gray-bg'},
-            //     resolve: {
-            //       controller: ['$ocLazyLoad', function($ocLazyLoad) {
-            //           return $ocLazyLoad.load([
-            //               'scripts/controller/portal/Register.controller.js',
-            //               'scripts/factory/Session.factory.js',
-            //           ]);
-            //       }]
-            //     }
-            // })
+        
         }
     ])
   .run();
