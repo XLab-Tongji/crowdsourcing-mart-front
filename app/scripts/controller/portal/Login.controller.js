@@ -13,29 +13,54 @@ app.controller('LoginController', ['$scope', '$state', 'AlertTool', 'ToasterTool
     var name = $scope.loginName;
     var password = $scope.loginPassword;
 
-    var loginForm = {
-      'X-Username': name,
-      'X-Password': encryptPassword(password, name)
-    }
+    SessionFactory.login().post({
+        'username': name,
+        'password': password,
 
-    SessionFactory.login(loginForm).post({}, loginSuccess, loginFailed);
+    }).$promise
+        .then(function(data){
+            if (data.result!=null) {
+              var currentUser=data.currentUser;
+              var token=data.result;
 
-    function loginSuccess(data, headers){
-      if (data.success) {
-        var currentUser = data.data
-        var token = headers()['x-auth-token']
-        SessionService.saveUser(currentUser);
-        SessionService.saveToken(token);
-        ToasterTool.success('登录成功','欢迎回到SVG平台!');
-      }else {
-        ToasterTool.success('登录失败',data.message);
-      }
+              SessionService.saveUser(currentUser);
+              SessionService.saveToken(token);
+              ToasterTool.success('登录成功','欢迎回到SVG平台!');
+            }else{
+                ToasterTool.error('登录失败',data.message);
+            }
+        });
 
-    }
-    function loginFailed(error){
-      AlertTool.error({title:'失败',text:'用户名或者密码错误'}).then(function() {
-      });
-    }
+
+
+    // var loginForm = {
+    //   'username': name,
+    //   'password': password
+    // }
+    //
+    // SessionFactory.login(loginForm).post({}, loginSuccess, loginFailed);
+    //
+    // function loginSuccess(data, headers){
+    //   if (data.status=="200") {
+    //
+    //     var currentUser = data.result;
+    //     var token=data.result;
+    //     console.log(token);
+    //
+    //
+    //     var token = headers()['x-auth-token']
+    //     SessionService.saveUser(currentUser);
+    //     SessionService.saveToken(token);
+    //     ToasterTool.success('登录成功','欢迎回到SVG平台!');
+    //   }else {
+    //     ToasterTool.success('登录失败',data.message);
+    //   }
+    //
+    // }
+    // function loginFailed(error){
+    //   AlertTool.error({title:'失败',text:'用户名或者密码错误'}).then(function() {
+    //   });
+    // }
     //ToasterTool.success('登录成功','欢迎回到众包平台!');
   }
 

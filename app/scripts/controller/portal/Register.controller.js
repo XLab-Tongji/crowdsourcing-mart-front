@@ -20,7 +20,7 @@ app.controller('RegisterController', ['$scope', '$state', '$rootScope', 'AlertTo
         SessionFactory.register().post({
             'name': name,
             'username': username,
-            'password': md5(password),
+            'password': password,
             'email': email,
             'mobile': mobile,
             'ext_params': ext_params
@@ -28,7 +28,7 @@ app.controller('RegisterController', ['$scope', '$state', '$rootScope', 'AlertTo
             .then(function(data){
                 if (data.result==1) {
                     ToasterTool.success('注册成功','欢迎使用SVG平台!');
-                    $state.go('login');
+                    $state.go('auth');
                 }else{
                     ToasterTool.error('错误',data.message);
                 }
