@@ -91,7 +91,7 @@ angular.module('crowdsourcing')
                   controller: ['$ocLazyLoad', function($ocLazyLoad) {
                       return $ocLazyLoad.load([
 
-                        'scripts/controller/portal/Login.controller.js',
+                        'scripts/controller/portal/Register.controller.js',
                         'scripts/factory/Session.factory.js',
                         'styles/styles.css',
                         'styles/styles.min.css'
@@ -99,7 +99,7 @@ angular.module('crowdsourcing')
                   }]
                 }
             })
-        
+
         }
     ])
   .run();
