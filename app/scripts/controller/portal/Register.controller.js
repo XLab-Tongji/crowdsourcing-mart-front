@@ -1,7 +1,7 @@
 'use strict';
 
-app.controller('RegisterController', ['$scope', '$state', '$rootScope', 'AlertTool', 'ToasterTool', 'SessionFactory', function($scope,
-                                                                                                                               $state, $rootScope, AlertTool, ToasterTool, SessionFactory) {
+app.controller('RegisterController', ['$scope', '$state', '$rootScope', 'AlertTool', 'ToasterTool',
+ 'SessionFactory', function($scope,$state, $rootScope, AlertTool, ToasterTool, SessionFactory) {
 
     init();
 

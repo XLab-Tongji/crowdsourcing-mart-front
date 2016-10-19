@@ -22,12 +22,10 @@ app.controller('LoginController', ['$scope', '$state', 'AlertTool', 'ToasterTool
             if (data.result[0]!=null) {
               var currentUser=data.result[1];
               var token=data.result[0];
-
-
-
               SessionService.saveUser(currentUser);
               SessionService.saveToken(token);
               ToasterTool.success('登录成功','欢迎回到SVG平台!');
+
             }else{
                 ToasterTool.error('登录失败',data.message);
             }

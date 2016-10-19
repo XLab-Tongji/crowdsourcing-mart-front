@@ -40,8 +40,13 @@
 
   <link href="styles/animate.css" rel="stylesheet">
   <link href="styles/styles.css" rel="stylesheet">
-
   <!-- <link href="styles/style.css" rel="stylesheet"> -->
+
+  <link href="lib/css/plugins/dropzone/basic.css" rel="stylesheet">
+  <link href="lib/css/plugins/dropzone/dropzone.css" rel="stylesheet">
+
+  <link href="styles/plugins/awesome-bootstrap-checkbox.css" rel="stylesheet">
+  <link href="styles/plugins/iCheck/custom.css" rel="stylesheet">
 
 </head>
 
@@ -56,8 +61,8 @@
 <script src="bower_components/jquery/dist/jquery.js"></script>
 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
-<script src="scripts/owl.carousel.min.js"></script>
-<script src="scripts/custom.js"></script>
+<!-- <script src="scripts/owl.carousel.min.js"></script>
+<script src="scripts/custom.js"></script> -->
 
 
 <!-- build:js(.) scripts/vendor.js -->
@@ -112,13 +117,18 @@
 <script src="scripts/owl.carousel.min.js"></script>
 <script src="scripts/custom.js"></script>
 <script src="bower_components/jquery/dist/jquery.js"></script>
-<!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQTpXj82d8UpCi97wzo_nKXL7nYrd4G70"></script> -->
+<script src="bower_components/metisMenu/dist/metisMenu.js"></script>
+<script src="lib/libs/jquery.slimscroll.min.js"></script>
+
 
 <!-- build:js({.tmp,app}) scripts/scripts.js -->
 <!-- Custom and plugin javascript -->
 <script src="lib/libs/inspinia.js"></script>
 <script src="lib/libs/jquery-ui-1.10.4.min.js"></script>
-<script src="lib/libs/jquery.slimscroll.min.js"></script>
+<script src="bower_components/pace/pace.js"></script>
+<script src="bower_components/wow/dist/wow.js"></script>
+<script src="scripts/plugins/dropzone/dropzone.js"></script>
+
 <!-- Anglar App Script -->
 <script src="scripts/app.js"></script>
 <script src="scripts/config.js"></script>
@@ -130,6 +140,17 @@
 <script src="scripts/service/ToasterTool.service.js"></script>
 <script src="scripts/service/Session.service.js"></script>
 <script src="scripts/interceptor/Auth.interceptor.js"></script>
+
+<!-- iCheck -->
+    <script src="bower_components/iCheck/icheck.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('.i-checks').iCheck({
+                    checkboxClass: 'icheckbox_square-green',
+                    radioClass: 'iradio_square-green',
+                });
+            });
+        </script>
 
 <!-- endbuild -->
 

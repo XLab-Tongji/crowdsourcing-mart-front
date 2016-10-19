@@ -10,7 +10,10 @@ angular.module('crowdsourcing')
     $rootScope, $sessionStorage, $localStorage, $location) {
     var whiteList = [
       'views/portal',
-      '/sign_up'
+      '/sign_up',
+      '/account/login',
+      'views/components'
+      
     ];
     function checkToken(){
       if (!$localStorage.token ) {

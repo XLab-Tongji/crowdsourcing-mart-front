@@ -12,8 +12,8 @@ angular.module('crowdsourcing')
     .config(['$stateProvider', '$urlRouterProvider',
         function($stateProvider, $urlRouterProvider) {
 
-          $urlRouterProvider
-                  .otherwise('/index/main');
+          // $urlRouterProvider
+          //         .otherwise('/index/main');
 
           $stateProvider
             .state('app', {
@@ -37,6 +37,19 @@ angular.module('crowdsourcing')
                   controller: ['$ocLazyLoad', function($ocLazyLoad) {
                       return $ocLazyLoad.load([
                           'scripts/controller/app/Main.controller.js',
+                      ]);
+                  }]
+                }
+            })
+            .state('form', {
+                url: "/form",
+                controller:'ProjectController',
+                templateUrl: "views/components/projectform.html",
+                resolve: {
+                  controller: ['$ocLazyLoad', function($ocLazyLoad) {
+                      return $ocLazyLoad.load([
+                          'scripts/controller/portal/Project.controller.js',
+                          'scripts/factory/Project.factory.js'
                       ]);
                   }]
                 }

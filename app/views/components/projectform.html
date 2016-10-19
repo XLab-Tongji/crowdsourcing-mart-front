@@ -1,0 +1,98 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>创建众包项目 <small>请按照规范填写项目需求</small></h5>
+                <div class="ibox-tools">
+                    <a class="collapse-link">
+                        <i class="fa fa-chevron-up"></i>
+                    </a>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-wrench"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="#">Config option 1</a>
+                        </li>
+                        <li><a href="#">Config option 2</a>
+                        </li>
+                    </ul>
+                    <a class="close-link">
+                        <i class="fa fa-times"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <form method="get" class="form-horizontal">
+                    <div class="form-group"><label class="col-sm-2 control-label">项目名称</label>
+
+                        <div class="col-md-3"><input type="text" class="form-control" ng-model="project_name"></div>
+                    </div>
+                    <!-- <div class="form-group"><label class="col-sm-2 control-label">项目开发类型</label>
+
+                        <div class="col-md-3"><select class="form-control m-b" name="account" ng-model="project_type">
+                            <option>Andriod</option>
+                            <option>IOS</option>
+                            <option>Web</option>
+                            <option>Wechat</option>
+                            <option>HTML</option>
+                        </select>
+
+
+                        </div>
+                    </div> -->
+
+                    <div class="hr-line-dashed"></div>
+                    <div class="form-group"><label class="col-sm-2 control-label">项目金额</label>
+
+                        <div class="col-md-3"><input type="text" class="form-control" ng-model="cost"></div>
+                    </div>
+                    <div class="form-group"><label class="col-sm-2 control-label">项目交付日期</label>
+
+                        <div class="col-md-3"><input type="text" class="form-control" ng-model="delivery_cycle"></div>
+                    </div>
+                    <div class="form-group"><label class="col-sm-2 control-label">项目质保日期</label>
+
+                        <div class="col-md-3"><input type="text" class="form-control" ng-model="warranty_cycle"></div>
+                    </div>
+
+                    <div class="hr-line-dashed"></div>
+
+                    <!-- <div class="form-group"><label class="col-sm-2 control-label">所在地</label>
+
+                        <div class="col-md-3"><select class="form-control m-b" name="account" ng-model="address">
+                            <option>上海市</option>
+                            <option>北京市</option>
+                            <option>重庆市</option>
+                            <option>天津市</option>
+                            <option>浙江省</option>
+                        </select>
+                        </div>
+                    </div> -->
+                    <div class="hr-line-dashed"></div>
+                    <div class="form-group"><label class="col-sm-2 control-label">项目描述</label>
+
+                        <div class="col-md-5"><input type="text" class="form-control" ng-model="description"></div>
+                    </div>
+
+                    <div class="hr-line-dashed"></div>
+
+                    <div class="form-group"><label class="col-sm-2 control-label">附件上传</label>
+
+                      <div class="input-group col-md-3">
+                      <input type="text" class="form-control" ng-model="file"> <span class="input-group-btn">
+                      <button type="button" class="btn btn-primary">选择文件
+                      </button> </span></div>
+
+                    </div>
+                    <div class="hr-line-dashed"></div>
+                    <div class="form-group">
+                        <div class="col-sm-4 col-sm-offset-2">
+                            <button class="btn btn-white" type="submit">取消 </button>
+                            <button class="btn btn-primary" type="submit" ng-click="addproject()">提交</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
