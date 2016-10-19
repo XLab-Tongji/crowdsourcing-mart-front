@@ -9,6 +9,17 @@ app.controller('ProjectController', ['$scope', '$state', '$rootScope', 'AlertToo
     function init(){
          $scope.addproject = addproject;
     }
+    function deleteform(){
+      delete $scope.project_name;
+      delete $scope.project_type;
+      delete $scope.cost;
+      delete $scope.delivery_cycle;
+      delete $scope.warranty_cycle;
+      delete $scope.address;
+      delete $scope.description;
+
+    }
+
 
     function addproject(){
         var project_name = $scope.project_name;
@@ -36,6 +47,9 @@ app.controller('ProjectController', ['$scope', '$state', '$rootScope', 'AlertToo
                 if (data.result==1) {
                     ToasterTool.success('需求创建成功');
                     //$state.go('auth');
+
+                    deleteform();
+
                 }else{
                     ToasterTool.error('错误',data.message);
                 }

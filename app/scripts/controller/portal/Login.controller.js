@@ -20,8 +20,8 @@ app.controller('LoginController', ['$scope', '$state', 'AlertTool', 'ToasterTool
     }).$promise
         .then(function(data){
             if (data.result[0]!=null) {
-              var currentUser=data.result[1];
-              var token=data.result[0];
+              var currentUser=data.result[0].username;
+              var token=data.result[0].tokens;
               SessionService.saveUser(currentUser);
               SessionService.saveToken(token);
               ToasterTool.success('登录成功','欢迎回到SVG平台!');
