@@ -12,8 +12,8 @@ angular.module('crowdsourcing')
     .config(['$stateProvider', '$urlRouterProvider',
         function($stateProvider, $urlRouterProvider) {
 
-          // $urlRouterProvider
-          //         .otherwise('/index/main');
+          $urlRouterProvider
+                  .otherwise('/portal');
 
           $stateProvider
             .state('app', {
