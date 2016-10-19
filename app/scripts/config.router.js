@@ -41,7 +41,7 @@ angular.module('crowdsourcing')
                   }]
                 }
             })
-            .state('form', {
+            .state('app.main.form', {
                 url: "/form",
                 controller:'ProjectController',
                 templateUrl: "views/components/projectform.html",

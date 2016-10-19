@@ -27,9 +27,18 @@
 
             </li>
 
-            <!--<li ng-class="{active: $state.includes('app.project')||$state.includes('app.project-detail')}">-->
-                <!--<a ui-sref="app.project"><i class="fa fa-tasks"></i> <span class="nav-label">项目</span> </a>-->
-            <!--</li>-->
+            <li ng-class="{active: $state.includes('app.main.form')}">
+                <a ui-sref="app.main.form"><i class="fa fa-tasks"></i> <span class="nav-label">创建需求</span> </a>
+            </li>
+            <li ng-class="{active: $state.includes('app.project')||$state.includes('app.project-detail')}">
+                <a ui-sref="app.main"><i class="fa fa-tasks"></i> <span class="nav-label">我的众包</span> </a>
+            </li>
+            <li ng-class="{active: $state.includes('app.project')||$state.includes('app.project-detail')}">
+                <a ui-sref="app.main.form"><i class="fa fa-tasks"></i> <span class="nav-label">我的信息</span> </a>
+            </li>
+            <li ng-class="{active: $state.includes('app.project')||$state.includes('app.project-detail')}">
+                <a ui-sref="app.main.form"><i class="fa fa-tasks"></i> <span class="nav-label">众包报名</span> </a>
+            </li>
             <!--&lt;!&ndash; <li ng-class="{active: $state.includes('app.task')}">-->
                 <!--<a ui-sref="app.task"><i class="fa fa-comments-o"></i> <span class="nav-label">任务</span></a>-->
             <!--</li> &ndash;&gt;-->
