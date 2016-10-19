@@ -12,8 +12,8 @@ angular.module('crowdsourcing')
     .config(['$stateProvider', '$urlRouterProvider',
         function($stateProvider, $urlRouterProvider) {
 
-          $urlRouterProvider
-                  .otherwise('/portal');
+          // $urlRouterProvider
+          //         .otherwise('/portal');
 
           $stateProvider
             .state('app', {
@@ -83,14 +83,6 @@ angular.module('crowdsourcing')
 
                         'scripts/controller/portal/Login.controller.js',
                         'scripts/factory/Session.factory.js'
-
-                        // 'styles/styles.min.css'
-                      //   'scripts/login.js',
-                      //   'scripts/custom.js',
-                      //   'styles/login.css',
-                      //   'styles/linearicons.css',
-                      //   'styles/owl.carousel.css',
-                      //   'styles/owl.theme.css'
                          ]);
                   }]
                 }
@@ -109,6 +101,21 @@ angular.module('crowdsourcing')
                         // 'styles/styles.css',
                         // 'styles/styles.min.css'
                       ]);
+                  }]
+                }
+            })
+            .state('app.main.prolist', {
+                url: "/prolist",
+                templateUrl: "views/components/projectlist.html",
+                //controller:'LoginController',
+                data: { pageTitle: '项目列表', specialClass: 'landing-page' },
+                resolve: {
+                  controller: ['$ocLazyLoad', function($ocLazyLoad) {
+                      return $ocLazyLoad.load([
+
+                        // 'scripts/controller/portal/Login.controller.js',
+                        // 'scripts/factory/Session.factory.js'
+                         ]);
                   }]
                 }
             })

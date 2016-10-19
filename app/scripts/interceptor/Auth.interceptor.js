@@ -11,7 +11,8 @@ angular.module('crowdsourcing')
     var whiteList = [
       'views/portal',
       '/sign_up',
-      '/account/login'
+      '/account/login',
+      'views/components'
 
     ];
     function checkToken(){
