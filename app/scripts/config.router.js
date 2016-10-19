@@ -12,8 +12,8 @@ angular.module('crowdsourcing')
     .config(['$stateProvider', '$urlRouterProvider',
         function($stateProvider, $urlRouterProvider) {
 
-          // $urlRouterProvider
-          //         .otherwise('/portal');
+          $urlRouterProvider
+                  .otherwise('/portal');
 
           $stateProvider
             .state('app', {
@@ -108,7 +108,6 @@ angular.module('crowdsourcing')
                 url: "/prolist",
                 templateUrl: "views/components/projectlist.html",
                 //controller:'LoginController',
-                data: { pageTitle: '项目列表', specialClass: 'landing-page' },
                 resolve: {
                   controller: ['$ocLazyLoad', function($ocLazyLoad) {
                       return $ocLazyLoad.load([
