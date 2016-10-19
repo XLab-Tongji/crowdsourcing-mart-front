@@ -27,7 +27,7 @@ app.controller('RegisterController', ['$scope', '$state', '$rootScope', 'AlertTo
         }).$promise
             .then(function(data){
                 if (data.result==1) {
-                    ToasterTool.success('注册成功','欢迎使用SVG平台!');
+                    ToasterTool.success('注册成功','欢迎使用众包平台!');
                     $state.go('auth');
                 }else{
                     ToasterTool.error('错误',data.message);
