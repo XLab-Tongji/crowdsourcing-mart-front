@@ -1,7 +1,8 @@
 'use strict';
 
 app.controller('ProjectController', ['$scope', '$state', '$rootScope', 'AlertTool', 'ToasterTool',
- 'ProjectFactory', function($scope,$state, $rootScope, AlertTool, ToasterTool, ProjectFactory) {
+ 'ProjectFactory','SessionFactory', 'SessionService',function($scope,$state, $rootScope, AlertTool, ToasterTool,
+   ProjectFactory,SessionFactory,SessionService) {
 
     init();
 
@@ -17,6 +18,7 @@ app.controller('ProjectController', ['$scope', '$state', '$rootScope', 'AlertToo
         var warranty_cycle = $scope.warranty_cycle;
         var address=$scope.address;
         var description=$scope.description;
+        var project_user_name=SessionService.getCurrentUser();
       //  var file=$scope.file;
 
         ProjectFactory.create().post({
@@ -26,12 +28,13 @@ app.controller('ProjectController', ['$scope', '$state', '$rootScope', 'AlertToo
             'delivery_cycle': delivery_cycle,
             'warranty_cycle': warranty_cycle,
             'address': address,
-            'description':description
+            'description':description,
+            'project_user_name':project_user_name
           //  'file':file;
         }).$promise
             .then(function(data){
                 if (data.result==1) {
-                    ToasterTool.success('需求创建成功','欢迎使用SVG平台!');
+                    ToasterTool.success('需求创建成功');
                     //$state.go('auth');
                 }else{
                     ToasterTool.error('错误',data.message);
