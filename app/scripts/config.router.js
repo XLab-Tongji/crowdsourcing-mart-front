@@ -118,6 +118,35 @@ angular.module('crowdsourcing')
                   }]
                 }
             })
+            .state('app.main.profile', {
+                url: "/profile",
+                templateUrl: "views/components/profile.html",
+                //controller:'LoginController',
+                resolve: {
+                  controller: ['$ocLazyLoad', function($ocLazyLoad) {
+                      return $ocLazyLoad.load([
+
+                        'scripts/plugins/sparkline/jquery.sparkline.min.js'
+                        // 'scripts/factory/Session.factory.js'
+                         ]);
+                  }]
+                }
+            })
+            .state('app.main.enrollist', {
+                url: "/enrollist",
+                templateUrl: "views/components/enrolllist.html",
+                //controller:'LoginController',
+                resolve: {
+                  controller: ['$ocLazyLoad', function($ocLazyLoad) {
+                      return $ocLazyLoad.load([
+
+                        'scripts/plugins/sparkline/jquery.sparkline.min.js'
+                        // 'scripts/factory/Session.factory.js'
+                         ]);
+                  }]
+                }
+            })
+            
 
         }
     ])
