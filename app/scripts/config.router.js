@@ -63,10 +63,12 @@ angular.module('crowdsourcing')
                   controller: ['$ocLazyLoad', function($ocLazyLoad) {
                       return $ocLazyLoad.load([
 
-                          'lib/libs/cbpAnimatedHeader.js',
+                        //   'lib/libs/cbpAnimatedHeader.js',
                           // 'lib/libs/classie.js',
-                          'lib/libs/wow.min.js',
-                          'lib/libs/inspinia.js'
+                        //   'lib/libs/wow.min.js',
+                        //   'lib/libs/inspinia.js',
+                        'scripts/plugins/portal/pageinit.js'
+
 
                       ]);
                   }]
