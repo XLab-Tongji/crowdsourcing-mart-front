@@ -68,7 +68,7 @@ angular.module('crowdsourcing')
                         //   'lib/libs/wow.min.js',
                         //   'lib/libs/inspinia.js',
                         'bower_components/bootstrap/js/scrollspy.js',
-                        'scripts/plugins/portal/pageinit.js'
+                        'scripts/plugins-custom/portal/pageinit.js'
 
 
                       ]);
@@ -129,7 +129,7 @@ angular.module('crowdsourcing')
                   controller: ['$ocLazyLoad', function($ocLazyLoad) {
                       return $ocLazyLoad.load([
 
-                        'scripts/plugins/sparkline/jquery.sparkline.min.js'
+                        'scripts/plugins-custom/sparkline/jquery.sparkline.min.js'
                         // 'scripts/factory/Session.factory.js'
                          ]);
                   }]
@@ -143,7 +143,7 @@ angular.module('crowdsourcing')
                   controller: ['$ocLazyLoad', function($ocLazyLoad) {
                       return $ocLazyLoad.load([
 
-                        'scripts/plugins/sparkline/jquery.sparkline.min.js'
+                        'scripts/plugins-custom/sparkline/jquery.sparkline.min.js'
                         // 'scripts/factory/Session.factory.js'
                          ]);
                   }]
