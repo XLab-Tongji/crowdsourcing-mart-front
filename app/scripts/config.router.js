@@ -67,6 +67,7 @@ angular.module('crowdsourcing')
                           // 'lib/libs/classie.js',
                         //   'lib/libs/wow.min.js',
                         //   'lib/libs/inspinia.js',
+                        'bower_components/bootstrap/js/scrollspy.js',
                         'scripts/plugins/portal/pageinit.js'
 
 
