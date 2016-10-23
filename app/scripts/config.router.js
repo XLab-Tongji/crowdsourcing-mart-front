@@ -100,7 +100,7 @@ angular.module('crowdsourcing')
                       return $ocLazyLoad.load([
 
                         'scripts/controller/portal/Register.controller.js',
-                        'scripts/factory/Session.factory.js',
+                        'scripts/factory/Session.factory.js'
                         // 'styles/styles.css',
                         // 'styles/styles.min.css'
                       ]);
