@@ -19,16 +19,28 @@ app.controller('LoginController', ['$scope', '$state', 'AlertTool', 'ToasterTool
 
     }).$promise
         .then(function(data){
-            if (data.result[0]!=null) {
+
+          if(data.result=="没有此用户" || data.result=="密码错误"){
+            var cause=data.result;
+            ToasterTool.error('登录失败',cause);
+          }else{
               var currentUser=data.result[0].username;
               var token=data.result[0].tokens;
               SessionService.saveUser(currentUser);
               SessionService.saveToken(token);
               ToasterTool.success('登录成功','欢迎回到众包平台!');
 
-            }else{
-                ToasterTool.error('登录失败',data.message);
-            }
+
+          }
+
+
+
+            // if (data.result.length>=2) {
+              
+            // }else{
+            //     $state.go('auth');
+            //     ToasterTool.error('登录失败','检查用户名密码');
+            // }
         });
     // var loginForm = {
     //   'username': name,

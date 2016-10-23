@@ -13,6 +13,14 @@ angular.module('crowdsourcing')
                         method: 'POST'
                     }
                 });
+            },
+            
+            get_project_list: function(){
+                return $resource(project_base_Url+'/list',{},{
+                    'get':{
+                        method: 'GET'
+                    }
+                })
             }
 
         };

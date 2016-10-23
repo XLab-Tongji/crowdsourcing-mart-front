@@ -1,13 +1,14 @@
 'use strict';
 
-app.controller('ProjectController', ['$scope', '$state', '$rootScope', 'AlertTool', 'ToasterTool',
- 'ProjectFactory','SessionFactory', 'SessionService',function($scope,$state, $rootScope, AlertTool, ToasterTool,
+app.controller('ProjectController', ['$scope','$state', '$rootScope', 'AlertTool', 'ToasterTool',
+ 'ProjectFactory','SessionFactory', 'SessionService',function($scope,$state,$rootScope, AlertTool, ToasterTool,
    ProjectFactory,SessionFactory,SessionService) {
 
     init();
 
     function init(){
          $scope.addproject = addproject;
+         getprojectlist();
     }
     function deleteform(){
       delete $scope.project_name;
@@ -55,6 +56,10 @@ app.controller('ProjectController', ['$scope', '$state', '$rootScope', 'AlertToo
                 }
             });
 
+    }
+
+    function getprojectlist(){
+   
     }
 
 }]);
