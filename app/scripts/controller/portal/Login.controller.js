@@ -30,17 +30,8 @@ app.controller('LoginController', ['$scope', '$state', 'AlertTool', 'ToasterTool
               SessionService.saveToken(token);
               ToasterTool.success('登录成功','欢迎回到众包平台!');
 
-
           }
 
-
-
-            // if (data.result.length>=2) {
-              
-            // }else{
-            //     $state.go('auth');
-            //     ToasterTool.error('登录失败','检查用户名密码');
-            // }
         });
     // var loginForm = {
     //   'username': name,
