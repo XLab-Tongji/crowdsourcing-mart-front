@@ -49,7 +49,7 @@ tiger.java.hsp
 *.eml
 *.userlibraries
 
-plugins/
+
 
 # war
 *.war

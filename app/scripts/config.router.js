@@ -133,7 +133,7 @@ angular.module('crowdsourcing')
                         controller: ['$ocLazyLoad', function ($ocLazyLoad) {
                             return $ocLazyLoad.load([
                                 'scripts/controller/portal/Project.list.controller.js',
-                                // 'scripts/controller/portal/Project.detail.controller.js',
+
                                 'scripts/factory/Project.factory.js',
                                 'scripts/factory/Session.factory.js'
                             ]);
@@ -157,31 +157,46 @@ angular.module('crowdsourcing')
                 .state('app.main.enrollist', {
                     url: "/enrollist",
                     templateUrl: "views/components/enrolllist.html",
-                    //controller:'LoginController',
+                    controller:'EnrollListController',
                     resolve: {
                         controller: ['$ocLazyLoad', function ($ocLazyLoad) {
                             return $ocLazyLoad.load([
 
-                                'lib/libs/sparkline/jquery.sparkline.min.js'
-                                // 'scripts/factory/Session.factory.js'
+                                'scripts/controller/portal/Enroll.list.controller.js',
+
+                                'scripts/factory/Project.factory.js',
+                                'scripts/factory/Session.factory.js'
+
                             ]);
                         }]
                     }
                 })
                 .state('app.main.detail', {
-                    url: "/detail",
+                    url: "/detail/:id",
                     templateUrl: "views/components/projectdetail.html",
-                    controller:'ProjectListController',
+                    controller: 'ProjectDetailController',
                     resolve: {
                         controller: ['$ocLazyLoad', function ($ocLazyLoad) {
                             return $ocLazyLoad.load([
 
                                 'lib/libs/slick/slick.min.js',
                                 'lib/libs/portal/detail.js',
-                                'scripts/controller/portal/Project.list.controller.js',
                                 'scripts/controller/portal/Project.detail.controller.js',
                                 'scripts/factory/Project.factory.js',
                                 'scripts/factory/Session.factory.js'
+                            ]);
+                        }]
+                    }
+                })
+                .state('app.main.enrolllistdetail', {
+                    url: "/enrollist/:id",
+                    templateUrl: "views/components/enrolldetail.html",
+                    controller: 'ProjectDetailController',
+                    resolve: {
+                        controller: ['$ocLazyLoad', function ($ocLazyLoad) {
+                            return $ocLazyLoad.load([
+
+                               
                             ]);
                         }]
                     }
