@@ -18,7 +18,7 @@ app.controller('EnrollListDetailController', ['$scope', '$state', '$rootScope', 
             ProjectFactory.listbyid().get({
 
                 'id': $stateParams.id
-                
+
             }).$promise.then(function (data) {
                 if (data.result != null) {
                     var resultbyid = data.result;
@@ -30,6 +30,19 @@ app.controller('EnrollListDetailController', ['$scope', '$state', '$rootScope', 
             })
             
         }
+
+        function enrollproject(){
+            ProjectFactory.enroll().post({
+                "dev_username":SessionService.getCurrentUser(),
+                "enroll_project_id": $stateParams.id
+            }).$promise.then(function(data){
+                if(data.result!=null){
+                    
+                }
+            })
+        }
+
+        
 
 
 

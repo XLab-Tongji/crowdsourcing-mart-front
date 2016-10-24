@@ -30,7 +30,7 @@ angular.module('crowdsourcing')
                 })
             },
             listbyid: function () {
-                return $resource(project_base_Url + '/list/id/:id', {id: '@id'}, {
+                return $resource(project_base_Url + '/list/id/:id', { id: '@id' }, {
                     'get': {
                         method: 'GET'
                     }
@@ -50,6 +50,14 @@ angular.module('crowdsourcing')
                     }
                 })
             },
+            enroll: function () {
+                return $resource(project_base_Url + '/developer/enroll', {}, {
+                    'post': {
+                        method: 'POST'
+                    }
+                })
+            }
+
 
         };
 
