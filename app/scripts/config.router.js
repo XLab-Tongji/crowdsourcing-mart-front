@@ -116,9 +116,10 @@ angular.module('crowdsourcing')
 
                                 'scripts/factory/Session.factory.js',
                                 'scripts/factory/Project.factory.js',
+                                
                                 'bower_components/bootstrap/js/scrollspy.js',
                                 'lib/libs/portal/pageinit.js',
-                                'styles/projectmart_select.css'
+                            
 
                                 // 'styles/styles.css',
                                 // 'styles/styles.min.css'
