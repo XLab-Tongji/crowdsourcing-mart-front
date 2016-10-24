@@ -110,7 +110,7 @@ angular.module('crowdsourcing')
                 .state('app.main.prolist', {
                     url: "/prolist",
                     templateUrl: "views/components/projectlist.html",
-                    controller:'ProjectListController',
+                    controller: 'ProjectListController',
                     resolve: {
                         controller: ['$ocLazyLoad', function ($ocLazyLoad) {
                             return $ocLazyLoad.load([
@@ -149,6 +149,22 @@ angular.module('crowdsourcing')
                         }]
                     }
                 })
+                .state('app.main.detail', {
+                    url: "/detail",
+                    templateUrl: "views/components/projectdetail.html",
+                    //controller:'LoginController',
+                    resolve: {
+                        controller: ['$ocLazyLoad', function ($ocLazyLoad) {
+                            return $ocLazyLoad.load([
+
+                                'lib/libs/slick/slick.min.js',
+                                'lib/libs/portal/detail.js'
+                                // 'scripts/factory/Session.factory.js'
+                            ]);
+                        }]
+                    }
+                })
+
 
 
         }
