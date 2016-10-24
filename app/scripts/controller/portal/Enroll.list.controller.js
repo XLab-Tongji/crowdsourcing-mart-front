@@ -1,23 +1,19 @@
 
 'use strict';
 
-app.controller('ProjectListController', ['$scope', '$state', '$rootScope', 'AlertTool', 'ToasterTool',
+app.controller('EnrollListController', ['$scope', '$state', '$rootScope', 'AlertTool', 'ToasterTool',
     'ProjectFactory', 'SessionFactory', 'SessionService', function ($scope, $state, $rootScope, AlertTool, ToasterTool,
         ProjectFactory, SessionFactory, SessionService) {
 
         init();
 
         function init() {
-            getprojectlist();
             getalllist();
 
-            $scope.getprojectdetail=getprojectdetail;
         }
 
-        function getprojectlist() {
-
-            ProjectFactory.userlist().get({
-                'user': SessionService.getCurrentUser()
+        function getalllist() {
+            ProjectFactory.list().get({
 
             }).$promise.then(function (data) {
                 if (data.result != null) {
@@ -26,10 +22,9 @@ app.controller('ProjectListController', ['$scope', '$state', '$rootScope', 'Aler
                 } else {
                     ToasterTool.error('获取失败', '请重试');
                 }
-
-            });
-
+            })
         }
+
 
         function getprojectdetail(id) {
 
@@ -42,13 +37,17 @@ app.controller('ProjectListController', ['$scope', '$state', '$rootScope', 'Aler
                     var resultbyid = data.result;
                     $scope.resultlist = resultbyid[0];
 
-                    $state.go('app.main.detail',{
+                    $state.go('app.main.detail', {
                         "id": id
                     });
                 } else {
                     ToasterTool.error('获取失败', '请重试');
                 }
             })
+            
         }
+
+
+
 
     }]);
