@@ -9,7 +9,6 @@ app.controller('ProjectListController', ['$scope', '$state', '$rootScope', 'Aler
 
         function init() {
             getprojectlist();
-            getalllist();
 
             $scope.getprojectdetail=getprojectdetail;
         }

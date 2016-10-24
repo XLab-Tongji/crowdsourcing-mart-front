@@ -106,13 +106,14 @@ angular.module('crowdsourcing')
                 .state('projectmart', {
                     url: "/promart",
                     templateUrl: "views/portal/projectmart.html",
-                    controller: 'ProjectListController',
+                    controller: 'EnrollListController',
                     data: { pageTitle: '项目市场', specialClass: 'landing-page' },
                     resolve: {
                         controller: ['$ocLazyLoad', function ($ocLazyLoad) {
                             return $ocLazyLoad.load([
 
-                                'scripts/controller/portal/Project.list.controller.js',
+                                'scripts/controller/portal/Enroll.list.controller.js',
+
                                 'scripts/factory/Session.factory.js',
                                 'scripts/factory/Project.factory.js',
                                 'bower_components/bootstrap/js/scrollspy.js',
