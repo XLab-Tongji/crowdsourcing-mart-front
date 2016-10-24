@@ -111,6 +111,7 @@ angular.module('crowdsourcing')
                         controller: ['$ocLazyLoad', function ($ocLazyLoad) {
                             return $ocLazyLoad.load([
                                 'scripts/controller/portal/Project.list.controller.js',
+                                // 'scripts/controller/portal/Project.detail.controller.js',
                                 'scripts/factory/Project.factory.js',
                                 'scripts/factory/Session.factory.js'
                             ]);
@@ -156,6 +157,7 @@ angular.module('crowdsourcing')
                                 'lib/libs/slick/slick.min.js',
                                 'lib/libs/portal/detail.js',
                                 'scripts/controller/portal/Project.list.controller.js',
+                                'scripts/controller/portal/Project.detail.controller.js',
                                 'scripts/factory/Project.factory.js',
                                 'scripts/factory/Session.factory.js'
                             ]);

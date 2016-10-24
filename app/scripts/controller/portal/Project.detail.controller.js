@@ -8,26 +8,25 @@ app.controller('ProjectListController', ['$scope', '$state', '$rootScope', 'Aler
         init();
 
         function init() {
-            getprojectlist();
             
         }
         
-        function getprojectlist() {
+        function getprojectdetail(id){
 
-            ProjectFactory.userlist().get({
-                 'user': SessionService.getCurrentUser()
-
+            ProjectFactory.userlistbyid().get({
+                'user': SessionService.getCurrentUser(),
+                'id': id
             }).$promise.then(function(data){
                 if(data.result!=null){
-                var result=data.result;
-                $scope.result=result;
+                    var resultbyid=data.result;
+                     $scope.resultbyid=resultbyid;
+                     $state.go('app.main.detail');
                 }else{
                     ToasterTool.error('获取失败','请重试');
                 }
-                
-            });
+            })
+            
             
         }
-
 
     }]);
