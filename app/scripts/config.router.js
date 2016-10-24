@@ -193,10 +193,14 @@ angular.module('crowdsourcing')
                 .state('app.main.enrolllistdetail', {
                     url: "/enrollist/:id",
                     templateUrl: "views/components/enrolldetail.html",
-                    controller: 'ProjectDetailController',
+                    controller: 'EnrollListDetailController',
                     resolve: {
                         controller: ['$ocLazyLoad', function ($ocLazyLoad) {
                             return $ocLazyLoad.load([
+
+                                'scripts/controller/portal/Enroll.list.detail.js',
+                                'scripts/factory/Project.factory.js',
+                                'scripts/factory/Session.factory.js'
 
                                
                             ]);

@@ -29,6 +29,13 @@ angular.module('crowdsourcing')
                     }
                 })
             },
+            listbyid: function () {
+                return $resource(project_base_Url + '/list/id/:id', {id: '@id'}, {
+                    'get': {
+                        method: 'GET'
+                    }
+                })
+            },
             userlist: function () {
                 return $resource(project_base_Url + '/list/:user', { user: '@user' }, {
                     'get': {
@@ -37,7 +44,7 @@ angular.module('crowdsourcing')
                 })
             },
             userlistbyid: function () {
-                return $resource(project_base_Url + '/list/:user/:id', { user: '@user',id:'@id' }, {
+                return $resource(project_base_Url + '/list/:user/:id', { user: '@user', id: '@id' }, {
                     'get': {
                         method: 'GET'
                     }

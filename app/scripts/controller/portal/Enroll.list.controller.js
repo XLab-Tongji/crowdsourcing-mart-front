@@ -9,6 +9,7 @@ app.controller('EnrollListController', ['$scope', '$state', '$rootScope', 'Alert
 
         function init() {
             getalllist();
+            $scope.getprojectdetail=getprojectdetail;
 
         }
 
@@ -37,7 +38,7 @@ app.controller('EnrollListController', ['$scope', '$state', '$rootScope', 'Alert
                     var resultbyid = data.result;
                     $scope.resultlist = resultbyid[0];
 
-                    $state.go('app.main.detail', {
+                    $state.go('app.main.enrolllistdetail', {
                         "id": id
                     });
                 } else {

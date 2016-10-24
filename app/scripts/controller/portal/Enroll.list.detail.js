@@ -1,30 +1,29 @@
 
 'use strict';
 
-app.controller('EnrollListDetailController', ['$scope', '$state', '$rootScope', 'AlertTool', 'ToasterTool',
-    'ProjectFactory', 'SessionFactory', 'SessionService', function ($scope, $state, $rootScope, AlertTool, ToasterTool,
+app.controller('EnrollListDetailController', ['$scope', '$state', '$rootScope', '$stateParams','AlertTool', 'ToasterTool',
+    'ProjectFactory', 'SessionFactory', 'SessionService', function ($scope, $state, $rootScope, $stateParams,AlertTool, ToasterTool,
         ProjectFactory, SessionFactory, SessionService) {
 
         init();
 
         function init() {
+            getprojectdetail();
 
         }
 
-        function getprojectdetail(id) {
+        function getprojectdetail() {
 
-            ProjectFactory.userlistbyid().get({
 
-                'user': SessionService.getCurrentUser(),
-                'id': id
+            ProjectFactory.listbyid().get({
+
+                'id': $stateParams.id
+                
             }).$promise.then(function (data) {
                 if (data.result != null) {
                     var resultbyid = data.result;
-                    $scope.resultlist = resultbyid[0];
-
-                    $state.go('app.main.enrolllistdetail', {
-                        "id": id
-                    });
+                    $scope.resultbyidlist=resultbyid[0];
+                
                 } else {
                     ToasterTool.error('获取失败', '请重试');
                 }
