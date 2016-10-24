@@ -38,9 +38,6 @@ angular.module('crowdsourcing')
                 })
             },
 
-
-
-
         };
 
     });
