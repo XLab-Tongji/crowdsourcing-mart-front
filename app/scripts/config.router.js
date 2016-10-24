@@ -63,10 +63,6 @@ angular.module('crowdsourcing')
                         controller: ['$ocLazyLoad', function ($ocLazyLoad) {
                             return $ocLazyLoad.load([
 
-                                //   'lib/libs/cbpAnimatedHeader.js',
-                                // 'lib/libs/classie.js',
-                                //   'lib/libs/wow.min.js',
-                                //   'lib/libs/inspinia.js',
                                 'bower_components/bootstrap/js/scrollspy.js',
                                 'lib/libs/portal/pageinit.js'
 
@@ -152,14 +148,16 @@ angular.module('crowdsourcing')
                 .state('app.main.detail', {
                     url: "/detail",
                     templateUrl: "views/components/projectdetail.html",
-                    //controller:'LoginController',
+                    controller:'ProjectListController',
                     resolve: {
                         controller: ['$ocLazyLoad', function ($ocLazyLoad) {
                             return $ocLazyLoad.load([
 
                                 'lib/libs/slick/slick.min.js',
-                                'lib/libs/portal/detail.js'
-                                // 'scripts/factory/Session.factory.js'
+                                'lib/libs/portal/detail.js',
+                                'scripts/controller/portal/Project.list.controller.js',
+                                'scripts/factory/Project.factory.js',
+                                'scripts/factory/Session.factory.js'
                             ]);
                         }]
                     }
