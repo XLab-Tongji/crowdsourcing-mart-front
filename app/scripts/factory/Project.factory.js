@@ -16,12 +16,22 @@ angular.module('crowdsourcing')
             },
             
             get_project_list: function(){
-                return $resource(project_base_Url+'/list',{},{
+                return $resource(project_base_Url+'/list/user/:',{},{
+                    'get':{
+                        method: 'GET'
+                    }
+                });
+            },
+
+            userlist: function(){
+                return $resource(project_base_Url+'/list/:user',{user: '@user'},{
                     'get':{
                         method: 'GET'
                     }
                 })
             }
+
+
 
         };
 
