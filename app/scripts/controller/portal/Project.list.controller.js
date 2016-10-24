@@ -39,7 +39,7 @@ app.controller('ProjectListController', ['$scope', '$state', '$rootScope', 'Aler
             }).$promise.then(function (data) {
                 if (data.result != null) {
                     var resultbyid = data.result;
-                    $rootScope.resultlist = resultbyid[0];
+                    $scope.resultlist = resultbyid[0];
 
                     $state.go('app.main.detail',{
                         "id": id

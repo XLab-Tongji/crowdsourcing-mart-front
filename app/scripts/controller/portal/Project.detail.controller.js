@@ -23,7 +23,6 @@ app.controller('ProjectDetailController', ['$scope', '$state', '$rootScope','$st
                 if (data.result != null) {
                     var resultbyid = data.result;
                     $scope.resultbyidlist=resultbyid[0];
-
                 
                 } else {
                     ToasterTool.error('获取失败', '请重试');
