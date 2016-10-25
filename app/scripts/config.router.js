@@ -116,10 +116,10 @@ angular.module('crowdsourcing')
 
                                 'scripts/factory/Session.factory.js',
                                 'scripts/factory/Project.factory.js',
-                                
+
                                 'bower_components/bootstrap/js/scrollspy.js',
                                 'lib/libs/portal/pageinit.js',
-                            
+
 
                                 // 'styles/styles.css',
                                 // 'styles/styles.min.css'
@@ -159,7 +159,7 @@ angular.module('crowdsourcing')
                 .state('app.main.enrollist', {
                     url: "/enrollist",
                     templateUrl: "views/components/enrolllist.html",
-                    controller:'EnrollListController',
+                    controller: 'EnrollListController',
                     resolve: {
                         controller: ['$ocLazyLoad', function ($ocLazyLoad) {
                             return $ocLazyLoad.load([
@@ -202,7 +202,24 @@ angular.module('crowdsourcing')
                                 'scripts/factory/Project.factory.js',
                                 'scripts/factory/Session.factory.js'
 
-                               
+
+                            ]);
+                        }]
+                    }
+                })
+                .state('app.main.developdetail', {
+                    url: "/devdetail",
+                    templateUrl: "views/components/developdetail.html",
+                    //controller: 'EnrollListDetailController',
+                    resolve: {
+                        controller: ['$ocLazyLoad', function ($ocLazyLoad) {
+                            return $ocLazyLoad.load([
+
+                                // 'scripts/controller/portal/Enroll.list.detail.js',
+                                // 'scripts/factory/Project.factory.js',
+                                // 'scripts/factory/Session.factory.js'
+
+
                             ]);
                         }]
                     }
