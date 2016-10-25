@@ -224,7 +224,23 @@ angular.module('crowdsourcing')
                         }]
                     }
                 })
+                .state('app.main.paticipationdetail', {
+                    url: "/padetail",
+                    templateUrl: "views/components/paticipationdetail.html",
+                    //controller: 'EnrollListDetailController',
+                    resolve: {
+                        controller: ['$ocLazyLoad', function ($ocLazyLoad) {
+                            return $ocLazyLoad.load([
 
+                                // 'scripts/controller/portal/Enroll.list.detail.js',
+                                // 'scripts/factory/Project.factory.js',
+                                // 'scripts/factory/Session.factory.js'
+
+
+                            ]);
+                        }]
+                    }
+                })
 
 
         }
