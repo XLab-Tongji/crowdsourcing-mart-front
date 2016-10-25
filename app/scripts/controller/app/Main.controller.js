@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('MainController', ['$scope', '$state', 'ToasterTool', 'SessionService',  function($scope,
+app.controller('MainController', ['$scope', '$state', 'ToasterTool', 'SessionService',function($scope,
     $state, ToasterTool, SessionService) {
 
     $scope.data = "test";

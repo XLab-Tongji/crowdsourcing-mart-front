@@ -41,7 +41,7 @@
 						<h4>项目报名人数</h4>
 
 						<div class="small text-muted">
-							10 人
+							{{count}}
 						</div>
 						<br/>
 
@@ -59,8 +59,8 @@
 						<div>
 							<div class="btn-group">
 								<!--<button class="btn btn-primary btn-sm"><i class="fa fa-cart-plus"></i>报名</button>-->
-								<button class="btn btn-white btn-sm"><i class="fa fa-star"></i> 报名 </button>
-								<button class="btn btn-white btn-sm"><i class="fa fa-envelope"></i> 取消 </button>
+								<button class="btn btn-white btn-sm" ng-click="enrollproject()"><i class="fa fa-star"></i> 报名 </button>
+								<button class="btn btn-white btn-sm" ng-click="cancelenroll()"><i class="fa fa-envelope"></i> 取消 </button>
 							</div>
 						</div>
 

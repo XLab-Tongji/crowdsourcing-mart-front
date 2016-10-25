@@ -56,7 +56,21 @@ angular.module('crowdsourcing')
                         method: 'POST'
                     }
                 })
-            }
+            },
+            cancelenroll: function () {
+                return $resource(project_base_Url + '/developer/enroll/cancel', {}, {
+                    'delete': {
+                        method: 'DELETE'
+                    }
+                })
+            },
+            enrollcount: function () {
+                return $resource(project_base_Url + '/developer/enroll/count/:id', {id:"@id"}, {
+                    'get': {
+                        method: 'GET'
+                    }
+                })
+            },
 
 
         };
