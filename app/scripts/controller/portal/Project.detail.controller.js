@@ -2,13 +2,15 @@
 'use strict';
 
 app.controller('ProjectDetailController', ['$scope', '$state', '$rootScope','$stateParams', 'AlertTool', 'ToasterTool',
-    'ProjectFactory', 'SessionFactory', 'SessionService', function ($scope, $state, $rootScope,$stateParams, AlertTool, ToasterTool,
-        ProjectFactory, SessionFactory, SessionService) {
+    'ProjectFactory', 'SessionFactory', 'SessionService','EnrollService', function ($scope, $state, $rootScope,$stateParams, AlertTool, ToasterTool,
+        ProjectFactory, SessionFactory, SessionService,EnrollService) {
 
         init();
 
         function init() {
             getprojectdetailbyid();
+            displayenrollcount($stateParams.id);
+
 
         }
 
@@ -28,6 +30,18 @@ app.controller('ProjectDetailController', ['$scope', '$state', '$rootScope','$st
                     ToasterTool.error('获取失败', '请重试');
                 }
             })
+        }
+
+                function displayenrollcount(id){
+
+            
+
+
+            EnrollService.getenrollcount(id,function(data){
+              $scope.count= data.result;
+            });
+               
+           
         }
 
 
