@@ -10,6 +10,7 @@ app.controller('EnrollListController', ['$scope', '$state', '$rootScope', 'Alert
         function init() {
             getalllist();
             $scope.getprojectdetail = getprojectdetail;
+            $scope.enrollproject = enrollproject;
             // $scope.displayenrollcount=displayenrollcount;
 
         }
@@ -56,15 +57,18 @@ app.controller('EnrollListController', ['$scope', '$state', '$rootScope', 'Alert
 
         }
 
-        $scope.displayenrollcount = {
-
-            getcount: function (id) {
-
-                EnrollService.getenrollcount(id, function (data) {
-                    return data.result;
-                });
-            }
-        };
+        function enrollproject(id) {
+            ProjectFactory.enroll().post({
+                "dev_username": SessionService.getCurrentUser(),
+                "enroll_project_id": id
+            }).$promise.then(function (data) {
+                if (data.status == 200) {
+                    ToasterTool.success('报名成功');
+                } else if (data.status == 500) {
+                    ToasterTool.error('报名失败', '不能重复报名');
+                }
+            })
+        }
 
 
 
