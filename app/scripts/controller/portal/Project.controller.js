@@ -42,7 +42,7 @@ app.controller('ProjectController', ['$scope', '$state', '$rootScope', 'AlertToo
                 'address': address,
                 'description': description,
                 'username': project_user_name,
-                'enroll_stop_time':enroll_stop_time
+                // 'enroll_stop_time':enroll_stop_time
                 //  'file':file;
             }).$promise
                 .then(function (data) {
