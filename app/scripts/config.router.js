@@ -185,7 +185,14 @@ angular.module('crowdsourcing')
                                 'lib/libs/portal/detail.js',
                                 'scripts/controller/portal/Project.detail.controller.js',
                                 'scripts/factory/Project.factory.js',
-                                'scripts/factory/Session.factory.js'
+                                'scripts/factory/Session.factory.js',
+                                'lib/libs/angular-bootstrap-checkbox.js',
+                                'lib/libs/sortable.js',
+                                'lib/libs/bootstrap-markdown/markdown.js',
+                                'styles/plugins/summernote.min.js',
+                                'lib/libs/codemirror/mode/textile/textile.js',
+                                'lib/libs/jqGrid/jquery.jqGrid.min.js',
+                                'lib/css/plugins/summernote/summernote-bs3.css'
                             ]);
                         }]
                     }
@@ -224,7 +231,21 @@ angular.module('crowdsourcing')
                         }]
                     }
                 })
+                .state('app.main.paticipationdetail', {
+                    url: "/padetail",
+                    templateUrl: "views/components/paticipationdetail.html",
+                    //controller: 'EnrollListDetailController',
+                    resolve: {
+                        controller: ['$ocLazyLoad', function ($ocLazyLoad) {
+                            return $ocLazyLoad.load([
 
+                                
+
+
+                            ]);
+                        }]
+                    }
+                })
 
 
         }
