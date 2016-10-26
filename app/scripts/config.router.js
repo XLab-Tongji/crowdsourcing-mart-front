@@ -187,12 +187,7 @@ angular.module('crowdsourcing')
                                 'scripts/factory/Project.factory.js',
                                 'scripts/factory/Session.factory.js',
                                 'lib/libs/angular-bootstrap-checkbox.js',
-                                'lib/libs/sortable.js',
-                                'lib/libs/bootstrap-markdown/markdown.js',
-                                'styles/plugins/summernote.min.js',
-                                'lib/libs/codemirror/mode/textile/textile.js',
-                                'lib/libs/jqGrid/jquery.jqGrid.min.js',
-                                'lib/css/plugins/summernote/summernote-bs3.css'
+                                
                             ]);
                         }]
                     }
