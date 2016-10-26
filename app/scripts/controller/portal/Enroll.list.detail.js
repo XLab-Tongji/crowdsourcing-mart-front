@@ -36,8 +36,8 @@ app.controller('EnrollListDetailController', ['$scope', '$state', '$rootScope', 
 
         function enrollproject(){
             ProjectFactory.enroll().post({
-                "dev_username":SessionService.getCurrentUser(),
-                "enroll_project_id": $stateParams.id
+                "username":SessionService.getCurrentUser(),
+                "project_id": $stateParams.id
             }).$promise.then(function(data){
                 if(data.status==200){
                     ToasterTool.success('报名成功');

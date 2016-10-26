@@ -9,6 +9,7 @@ app.controller('LoginController', ['$scope', '$state', 'AlertTool', 'ToasterTool
     $scope.login = login;
   }
 
+
   function login(){
     var name = $scope.loginName;
     var password = $scope.loginPassword;

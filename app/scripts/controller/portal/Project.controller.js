@@ -31,6 +31,7 @@ app.controller('ProjectController', ['$scope', '$state', '$rootScope', 'AlertToo
             var address = $scope.address;
             var description = $scope.description;
             var project_user_name = SessionService.getCurrentUser();
+            var enroll_stop_time=$scope.enroll_stop_time;
 
             ProjectFactory.create().post({
                 'project_name': project_name,
@@ -40,7 +41,8 @@ app.controller('ProjectController', ['$scope', '$state', '$rootScope', 'AlertToo
                 'warranty_cycle': warranty_cycle,
                 'address': address,
                 'description': description,
-                'project_user_name': project_user_name
+                'username': project_user_name,
+                'enroll_stop_time':enroll_stop_time
                 //  'file':file;
             }).$promise
                 .then(function (data) {
