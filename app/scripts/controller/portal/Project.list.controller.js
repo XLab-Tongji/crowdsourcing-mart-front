@@ -10,7 +10,7 @@ app.controller('ProjectListController', ['$scope', '$state', '$rootScope', 'Aler
         function init() {
             getprojectlist();
 
-            $scope.getprojectdetail=getprojectdetail;
+            $scope.getprojectdetail = getprojectdetail;
         }
 
         function getprojectlist() {
@@ -41,7 +41,7 @@ app.controller('ProjectListController', ['$scope', '$state', '$rootScope', 'Aler
                     var resultbyid = data.result;
                     $scope.resultlist = resultbyid[0];
 
-                    $state.go('app.main.detail',{
+                    $state.go('app.main.detail', {
                         "id": id
                     });
                 } else {

@@ -187,7 +187,7 @@ angular.module('crowdsourcing')
                                 'scripts/factory/Project.factory.js',
                                 'scripts/factory/Session.factory.js',
                                 'lib/libs/angular-bootstrap-checkbox.js',
-                                
+
                             ]);
                         }]
                     }
@@ -234,14 +234,13 @@ angular.module('crowdsourcing')
                         controller: ['$ocLazyLoad', function ($ocLazyLoad) {
                             return $ocLazyLoad.load([
 
-                                
+
 
 
                             ]);
                         }]
                     }
                 })
-
 
         }
     ])

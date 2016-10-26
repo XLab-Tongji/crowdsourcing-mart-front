@@ -31,7 +31,7 @@ app.controller('ProjectController', ['$scope', '$state', '$rootScope', 'AlertToo
             var address = $scope.address;
             var description = $scope.description;
             var project_user_name = SessionService.getCurrentUser();
-            var enroll_stop_time=$scope.enroll_stop_time;
+            var enroll_stop_time = $scope.enroll_stop_time;
 
             ProjectFactory.create().post({
                 'project_name': project_name,
@@ -62,15 +62,15 @@ app.controller('ProjectController', ['$scope', '$state', '$rootScope', 'AlertToo
         function getprojectlist() {
 
             ProjectFactory.userlist().get({
-                 'userid': SessionService.getCurrentUser()
+                'userid': SessionService.getCurrentUser()
             }
 
-            ).$promise.then(function(data){
+            ).$promise.then(function (data) {
 
-                var result=data.result;
+                var result = data.result;
 
             });
-            
+
         }
 
     }]);

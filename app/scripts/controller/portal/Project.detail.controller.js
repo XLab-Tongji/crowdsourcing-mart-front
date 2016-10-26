@@ -1,9 +1,9 @@
 
 'use strict';
 
-app.controller('ProjectDetailController', ['$scope', '$state', '$rootScope','$stateParams', 'AlertTool', 'ToasterTool',
-    'ProjectFactory', 'SessionFactory', 'SessionService','EnrollService', function ($scope, $state, $rootScope,$stateParams, AlertTool, ToasterTool,
-        ProjectFactory, SessionFactory, SessionService,EnrollService) {
+app.controller('ProjectDetailController', ['$scope', '$state', '$rootScope', '$stateParams', 'AlertTool', 'ToasterTool',
+    'ProjectFactory', 'SessionFactory', 'SessionService', 'EnrollService', function ($scope, $state, $rootScope, $stateParams, AlertTool, ToasterTool,
+        ProjectFactory, SessionFactory, SessionService, EnrollService) {
 
         init();
 
@@ -24,24 +24,24 @@ app.controller('ProjectDetailController', ['$scope', '$state', '$rootScope','$st
             }).$promise.then(function (data) {
                 if (data.result != null) {
                     var resultbyid = data.result;
-                    $scope.resultbyidlist=resultbyid[0];
-                
+                    $scope.resultbyidlist = resultbyid[0];
+
                 } else {
                     ToasterTool.error('获取失败', '请重试');
                 }
             })
         }
 
-                function displayenrollcount(id){
-
-            
+        function displayenrollcount(id) {
 
 
-            EnrollService.getenrollcount(id,function(data){
-              $scope.count= data.result;
+
+
+            EnrollService.getenrollcount(id, function (data) {
+                $scope.count = data.result;
             });
-               
-           
+
+
         }
 
 
