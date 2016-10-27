@@ -35,7 +35,7 @@ app.controller('EnrollListDetailController', ['$scope', '$state', '$rootScope', 
 
         }
 
-<<<<<<< HEAD
+
         function gotomemberlist(){
             $state.go('app.main.projectdetail_member', {
                         "id": id
@@ -51,10 +51,10 @@ app.controller('EnrollListDetailController', ['$scope', '$state', '$rootScope', 
         }
 
 
-        function enrollproject(){
-=======
+   
+
         function enrollproject() {
->>>>>>> c448de819ee0e7cead452bc4807f00ee52df161d
+
             ProjectFactory.enroll().post({
                 "username": SessionService.getCurrentUser(),
                 "project_id": $stateParams.id

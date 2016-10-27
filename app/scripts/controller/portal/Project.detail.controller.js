@@ -37,19 +37,14 @@ app.controller('ProjectDetailController', ['$scope', '$state', '$rootScope', '$s
             })
         }
 
-<<<<<<< HEAD
-        function displayenrollcount(id){
-            EnrollService.getenrollcount(id,function(data){
-              $scope.count= data.result;
-=======
+
+
         function displayenrollcount(id) {
-
-
 
 
             EnrollService.getenrollcount(id, function (data) {
                 $scope.count = data.result;
->>>>>>> c448de819ee0e7cead452bc4807f00ee52df161d
+
             });
 
 
