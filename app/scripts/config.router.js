@@ -257,9 +257,6 @@ angular.module('crowdsourcing')
                                 'scripts/controller/portal/Develop.detail.list.controller.js',
                                 'scripts/factory/Project.factory.js',
                                 'scripts/factory/Session.factory.js'
-
-
-
                             ]);
                         }]
                     }
