@@ -250,11 +250,13 @@ angular.module('crowdsourcing')
                 .state('app.main.paticipationdetail', {
                     url: "/padetail",
                     templateUrl: "views/components/paticipationdetail.html",
-                    //controller: 'EnrollListDetailController',
+                    controller: 'DevelopListDetail',
                     resolve: {
                         controller: ['$ocLazyLoad', function ($ocLazyLoad) {
                             return $ocLazyLoad.load([
-
+                                'scripts/controller/portal/Develop.detail.list.controller.js',
+                                'scripts/factory/Project.factory.js',
+                                'scripts/factory/Session.factory.js'
 
 
 

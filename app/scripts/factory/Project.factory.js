@@ -71,19 +71,29 @@ angular.module('crowdsourcing')
                     }
                 })
             },
-            enrollmember:function(){
-                return $resource(project_base_Url+'/develop/enroll/member/detail/:project_id',{project_id:"@project_id"},
-                    {'get':{
-                        method:'GET'
-                    }
-                })
+            enrollmember: function () {
+                return $resource(project_base_Url + '/develop/enroll/member/detail/:project_id', { project_id: "@project_id" },
+                    {
+                        'get': {
+                            method: 'GET'
+                        }
+                    })
             },
-           getenrolldetail:function(){
-                return $resource(project_base_Url+'/develop/enroll/list/:username',{username:"@username"},
-                    {'get':{
-                        method:'GET'
-                    }
-                })
+            getenrolldetail: function () {
+                return $resource(project_base_Url + '/develop/enroll/list/:username', { username: "@username" },
+                    {
+                        'get': {
+                            method: 'GET'
+                        }
+                    })
+            },
+            getdevelopdetail: function () {
+                return $resource(project_base_Url + '/develop/list/:username', { username: "@username" },
+                    {
+                        'get': {
+                            method: 'GET'
+                        }
+                    })
             },
 
         };
