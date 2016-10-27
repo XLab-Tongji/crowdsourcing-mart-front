@@ -10,10 +10,15 @@ app.controller('ProjectDetailController', ['$scope', '$state', '$rootScope','$st
         function init() {
             getprojectdetailbyid();
             displayenrollcount($stateParams.id);
-
+            $scope.gotomemberlist=gotomemberlist;
 
         }
 
+        function gotomemberlist(){
+            $state.go('app.main.projectdetail_member', {
+                        "id": $stateParams.id
+                    });
+        }
 
         function getprojectdetailbyid() {
 
@@ -32,17 +37,13 @@ app.controller('ProjectDetailController', ['$scope', '$state', '$rootScope','$st
             })
         }
 
-                function displayenrollcount(id){
-
-            
-
-
+        function displayenrollcount(id){
             EnrollService.getenrollcount(id,function(data){
               $scope.count= data.result;
             });
                
            
         }
-
+    
 
     }]);

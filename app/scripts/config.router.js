@@ -187,7 +187,7 @@ angular.module('crowdsourcing')
                                 'scripts/factory/Project.factory.js',
                                 'scripts/factory/Session.factory.js',
                                 'lib/libs/angular-bootstrap-checkbox.js',
-                                
+                                'styles/styles.css'
                             ]);
                         }]
                     }
@@ -209,10 +209,29 @@ angular.module('crowdsourcing')
                         }]
                     }
                 })
+
+                .state('app.main.projectdetail_member', {
+                    url: "/detail/:id/enrolldetail_member",
+                    templateUrl: "views/components/projectdetail_member.html",
+                    controller: 'EnrollMemberList',
+                    resolve: {
+                        controller: ['$ocLazyLoad', function ($ocLazyLoad) {
+                            return $ocLazyLoad.load([
+
+                                'scripts/controller/portal/Enroll.member.list.js',
+                                'scripts/factory/Project.factory.js',
+                                'scripts/factory/Session.factory.js'
+
+
+                            ]);
+                        }]
+                    }
+                })
+
                 .state('app.main.developdetail', {
                     url: "/devdetail",
                     templateUrl: "views/components/developdetail.html",
-                    //controller: 'EnrollListDetailController',
+                    // controller: 'EnrollListDetailController',
                     resolve: {
                         controller: ['$ocLazyLoad', function ($ocLazyLoad) {
                             return $ocLazyLoad.load([

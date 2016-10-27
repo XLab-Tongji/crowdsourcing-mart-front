@@ -71,6 +71,13 @@ angular.module('crowdsourcing')
                     }
                 })
             },
+            enrollmember:function(){
+                return $resource(project_base_Url+'/develop/enroll/member/detail/:project_id',{project_id:"@project_id"},
+                    {'get':{
+                        method:'GET'
+                    }
+                })
+            }
 
 
         };

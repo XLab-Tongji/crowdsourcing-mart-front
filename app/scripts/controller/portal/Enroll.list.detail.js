@@ -12,6 +12,7 @@ app.controller('EnrollListDetailController', ['$scope', '$state', '$rootScope', 
             $scope.enrollproject=enrollproject;
             $scope.cancelenroll=cancelenroll;
             displayenrollcount($stateParams.id);
+            $scope.gotomemberlist=gotomemberlist;
 
         }
 
@@ -33,6 +34,21 @@ app.controller('EnrollListDetailController', ['$scope', '$state', '$rootScope', 
             })
             
         }
+
+        function gotomemberlist(){
+            $state.go('app.main.projectdetail_member', {
+                        "id": id
+                    });
+            // ProjectFactory.enrollmember().get({
+            //     'project_id':$stateParams.id
+            // }).$promise.then(function (data) {
+            //     if(data.status==200)
+            //         console.log(data);
+            // })
+
+
+        }
+
 
         function enrollproject(){
             ProjectFactory.enroll().post({
