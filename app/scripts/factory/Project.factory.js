@@ -77,8 +77,14 @@ angular.module('crowdsourcing')
                         method:'GET'
                     }
                 })
-            }
-
+            },
+           getenrolldetail:function(){
+                return $resource(project_base_Url+'/develop/enroll/list/:username',{username:"@username"},
+                    {'get':{
+                        method:'GET'
+                    }
+                })
+            },
 
         };
 

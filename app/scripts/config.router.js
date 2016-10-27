@@ -230,17 +230,17 @@ angular.module('crowdsourcing')
                     }
                 })
 
-                .state('app.main.developdetail', {
-                    url: "/devdetail",
-                    templateUrl: "views/components/developdetail.html",
-                    // controller: 'EnrollListDetailController',
+                .state('app.main.develoenrollpdetail', {
+                    url: "/devenrolldetail",
+                    templateUrl: "views/components/developenrolldetail.html",
+                    controller: 'EnrollDevlistController',
                     resolve: {
                         controller: ['$ocLazyLoad', function ($ocLazyLoad) {
                             return $ocLazyLoad.load([
 
-                                // 'scripts/controller/portal/Enroll.list.detail.js',
-                                // 'scripts/factory/Project.factory.js',
-                                // 'scripts/factory/Session.factory.js'
+                                'scripts/controller/portal/Enroll.developer.list.controller.js',
+                                'scripts/factory/Project.factory.js',
+                                'scripts/factory/Session.factory.js'
 
 
                             ]);
