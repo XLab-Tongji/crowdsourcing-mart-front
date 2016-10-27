@@ -1,8 +1,8 @@
-;void function(){
+; void function () {
 
 	app.factory("HttpResponseFactory", HttpResponseFactory)
 
-	function HttpResponseFactory(){
+	function HttpResponseFactory() {
 		return {
 			isResponseSuccess: isResponseSuccess,
 			isServerResponse: isServerResponse,
@@ -12,27 +12,27 @@
 		}
 	}
 
-	function isResponseSuccess(response){
+	function isResponseSuccess(response) {
 		return response.success
 	}
 
-	function getResponseMessage(response){
+	function getResponseMessage(response) {
 		return response.message
 	}
 
-	function getResponseData(response){
+	function getResponseData(response) {
 		return response.data
 	}
 
-	function getResponsePaginator(response){
+	function getResponsePaginator(response) {
 		return response.paginator
 	}
 
-	function isServerResponse(response){
-		if(response.success === undefined){
+	function isServerResponse(response) {
+		if (response.success === undefined) {
 			return false
-		}else{
+		} else {
 			return true
 		}
 	}
-}()
+} ()

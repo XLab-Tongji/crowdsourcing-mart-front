@@ -65,7 +65,7 @@ angular.module('crowdsourcing')
                 })
             },
             enrollcount: function () {
-                return $resource(project_base_Url + '/develop/enroll/count/:id', {id:"@id"}, {
+                return $resource(project_base_Url + '/develop/enroll/count/:id', { id: "@id" }, {
                     'get': {
                         method: 'GET'
                     }

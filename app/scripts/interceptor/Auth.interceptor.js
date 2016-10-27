@@ -15,19 +15,19 @@ angular.module('crowdsourcing')
       
 
     ];
-    function checkToken(){
-      if (!$localStorage.token ) {
-				$location.path('/portal');
-				return false;
-			}else{
-				// $rootScope.currentUser = $localStorage.currentUser;
-				$rootScope.token = $localStorage.token;
-			}
+    function checkToken() {
+      if (!$localStorage.token) {
+        $location.path('/portal');
+        return false;
+      } else {
+        // $rootScope.currentUser = $localStorage.currentUser;
+        $rootScope.token = $localStorage.token;
+      }
     };
     function isNotInWithList(url) {
-      for(var i = 0; i < whiteList.length; i++) {
+      for (var i = 0; i < whiteList.length; i++) {
         var regExp = new RegExp(whiteList[i]);
-        if(regExp.test(url)) {
+        if (regExp.test(url)) {
           return false;
         }
       }
@@ -36,8 +36,8 @@ angular.module('crowdsourcing')
     return {
       request: function (config) {
         //检查是否已经登录，如果没有登录强制跳转到登录框
-        if(config && isNotInWithList(config.url)){
-            checkToken();
+        if (config && isNotInWithList(config.url)) {
+          checkToken();
         }
         return config || $q.when(config);
       },
