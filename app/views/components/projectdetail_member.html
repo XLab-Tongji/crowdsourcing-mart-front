@@ -13,7 +13,7 @@
                                 <tbody ng-repeat="x in memberdata">
                                 <tr>
                                     <td>
-                                        <span class="label label-primary">Added</span>
+                                        <span class="label label-primary">评级</span>
                                     </td>
                                     <td class="issue-info">
                                         <a href="#">
@@ -25,14 +25,7 @@
                                         </small>
                                     </td>
                                     <td>
-                                        Adrian Novak
-                                    </td>
-                                    <td>
-                                        12.02.2015 10:00 am
-                                    </td>
-                                    <td>
-                                        <span class="pie">0.52,1.041</span>
-                                        2d
+                                       报名时间 {{x.enroll_date| date:'medium'}}
                                     </td>
                                     <td class="text-right">
                                         <button class="btn btn-white btn-xs"> 查看</button>
