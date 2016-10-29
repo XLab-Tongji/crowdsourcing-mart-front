@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * 项目有关 api
+ * 报名有关api
  */
 angular.module('crowdsourcing')
     .factory('EnrollFactory', function ($resource, $rootScope) {
@@ -14,14 +14,7 @@ angular.module('crowdsourcing')
                     }
                 });
             },
-
-            get_project_list: function () {
-                return $resource(project_base_Url + '/list/user/:', {}, {
-                    'get': {
-                        method: 'GET'
-                    }
-                });
-            },
+        
             list: function () {
                 return $resource(project_base_Url + '/list', {}, {
                     'get': {

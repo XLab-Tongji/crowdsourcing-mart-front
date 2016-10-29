@@ -11,7 +11,7 @@ angular.module('crowdsourcing')
     var whiteList = [
       'views/portal',
       '/account/login',
-      '/project/list',
+      '/project/all',
       
 
     ];

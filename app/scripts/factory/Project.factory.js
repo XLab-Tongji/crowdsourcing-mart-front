@@ -14,30 +14,22 @@ angular.module('crowdsourcing')
                     }
                 });
             },
-
-            get_project_list: function () {
-                return $resource(project_base_Url + '/list/user/:', {}, {
-                    'get': {
-                        method: 'GET'
-                    }
-                });
-            },
             list: function () {
-                return $resource(project_base_Url + '/list', {}, {
+                return $resource(project_base_Url + '/all', {}, {
                     'get': {
                         method: 'GET'
                     }
                 })
             },
             listbyid: function () {
-                return $resource(project_base_Url + '/list/id/:id', { id: '@id' }, {
+                return $resource(project_base_Url + '/list/:id', { id: '@id' }, {
                     'get': {
                         method: 'GET'
                     }
                 })
             },
             userlist: function () {
-                return $resource(project_base_Url + '/list/:user', { user: '@user' }, {
+                return $resource(project_base_Url + '/all/:user', { user: '@user' }, {
                     'get': {
                         method: 'GET'
                     }
