@@ -16,7 +16,7 @@
                                         <span class="label label-primary">评级</span>
                                     </td>
                                     <td class="issue-info">
-                                        <a href="#">
+                                        <a href="#" ng-model="username">
                                             {{x.username}}
                                         </a>
 
@@ -29,7 +29,7 @@
                                     </td>
                                     <td class="text-right">
                                         <button class="btn btn-white btn-xs"> 查看</button>
-                                        <button class="btn btn-white btn-xs"> 确认</button>
+                                        <button class="btn btn-white btn-xs" type="submit" ng-click="confirmdev()"> 确认</button>
                                         
                                     </td>
                                 </tr>

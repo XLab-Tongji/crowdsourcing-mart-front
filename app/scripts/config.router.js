@@ -262,6 +262,22 @@ angular.module('crowdsourcing')
                     }
                 })
 
+                .state('app.main.confirmdevelopers', {
+                    url: "/devconfirm",
+                    templateUrl: "views/components/projectdetail_member.html",
+                    controller: 'ConfirmDev',
+                    resolve: {
+                        controller: ['$ocLazyLoad', function ($ocLazyLoad) {
+                            return $ocLazyLoad.load([
+                                'scripts/controller/portal/Develop.detail.list.controller.js',
+                                'scripts/factory/Project.factory.js',
+                                'scripts/factory/Session.factory.js',
+                                'scripts/controller/portal/Confirm.Dev.js'
+                            ]);
+                        }]
+                    }
+                })
+
         }
     ])
     .run();

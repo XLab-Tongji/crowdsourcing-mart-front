@@ -87,7 +87,7 @@ angular.module('crowdsourcing')
                         }
                     })
             },
-
+            
         };
 
     });
