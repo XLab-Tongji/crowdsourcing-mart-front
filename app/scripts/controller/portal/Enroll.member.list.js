@@ -9,7 +9,7 @@ app.controller('EnrollMemberList', ['$scope', '$state', '$rootScope', '$statePar
 
         function init() {
             getmemberdetail();
-
+            $state.confirmdev = confirmdev; 
         }
 
         function getmemberdetail() {
@@ -25,6 +25,28 @@ app.controller('EnrollMemberList', ['$scope', '$state', '$rootScope', '$statePar
             })
 
 
+        }
+
+
+        function confirmdev(username) {
+
+            var project_id = $stateParams.id;
+            var username = $scope.username;
+
+            ProjectFactory.create().post({
+
+                'project_id': project_id,
+                'username': username,
+
+            }).$promise
+                .then(function (data) {
+                    if (data.result == 1) {
+                        ToasterTool.success('确认开发者成功');
+
+                    } else {
+                        ToasterTool.error('错误', data.message);
+                    }
+                })
         }
 
 

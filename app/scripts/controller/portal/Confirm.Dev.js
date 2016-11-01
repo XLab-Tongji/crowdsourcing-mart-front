@@ -10,8 +10,7 @@ app.controller('ConfirmDev', ['$scope', '$state', '$rootScope', 'AlertTool', 'To
 
         function init() {
 
-            confirmdev();
-            
+            confirmdev();  
 
         }
         
