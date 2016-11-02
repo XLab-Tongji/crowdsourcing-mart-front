@@ -1092,14 +1092,14 @@ button.dim:active:before {
 }
 
 .onoffswitch-inner:before {
-	content: "ON";
+	content: "确认";
 	padding-left: 10px;
 	background-color: #1ab394;
 	color: #FFFFFF
 }
 
 .onoffswitch-inner:after {
-	content: "OFF";
+	content: "取消";
 	padding-right: 10px;
 	background-color: #FFFFFF;
 	color: #999999;
@@ -1108,7 +1108,7 @@ button.dim:active:before {
 
 .onoffswitch-switch {
 	width: 20px;
-	margin: 0;
+	margin: 0 auto;
 	background: #FFFFFF;
 	border: 2px solid #1ab394;
 	border-radius: 2px;
@@ -1962,7 +1962,7 @@ div.dt-button-info {
 }
 
 .onoffswitch-checkbox {
-	display: none
+	display: none;
 }
 
 .onoffswitch-label {
@@ -2000,14 +2000,14 @@ div.dt-button-info {
 }
 
 .onoffswitch-inner:before {
-	content: "ON";
+	content: "取消";
 	padding-left: 7px;
 	background-color: #1AB394;
 	color: #FFFFFF
 }
 
 .onoffswitch-inner:after {
-	content: "OFF";
+	content: "确认";
 	padding-right: 7px;
 	background-color: #FFFFFF;
 	color: #919191;
@@ -8154,7 +8154,7 @@ body.rtls .top-navigation .footer.fixed,body.rtls.top-navigation .footer.fixed {
 }
 
 .setings-item .switch {
-	float: right
+	float: right;
 }
 
 .skin-name a {

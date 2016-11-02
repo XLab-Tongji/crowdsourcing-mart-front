@@ -87,6 +87,14 @@ angular.module('crowdsourcing')
                         }
                     })
             },
+            confirmdev:function(){
+                return $resource(project_base_Url + '/develop/confirm',{},
+                {
+                    'post':{
+                        method:'POST'
+                    }
+                })
+            }
             
         };
 
