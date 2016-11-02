@@ -16,7 +16,7 @@
                                         <span class="label label-primary">评级</span>
                                     </td>
                                     <td class="issue-info">
-                                        <a href="#" ng-model="username">
+                                        <a href="#">
                                             {{x.username}}
                                         </a>
 
@@ -29,8 +29,19 @@
                                     </td>
                                     <td class="text-right">
                                         <button class="btn btn-white btn-xs"> 查看</button>
-                                        <button class="btn btn-white btn-xs" type="submit" ng-click="confirmdev(x.username)"> 确认</button>
-                                        
+                                        <!-- <button class="btn btn-white btn-xs" type="submit" ng-click=confirmdev(x.username)> 确认</button> -->
+                              
+                                    </td>
+                                    <td>
+                                        <div class="switch">
+                                            <div class="onoffswitch">
+                                                <input type="checkbox" class="onoffswitch-checkbox" id="example2">
+                                                <label class="onoffswitch-label" for="example2">
+                                                <span class="onoffswitch-inner" ng-click=confirmdev(x.username)></span>
+                                                <span class="onoffswitch-switch"></span>
+                                                </label>
+                                            </div>
+                                        </div>
                                     </td>
                                 </tr>
                                 

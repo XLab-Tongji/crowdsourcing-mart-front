@@ -9,7 +9,7 @@ app.controller('EnrollMemberList', ['$scope', '$state', '$rootScope', '$statePar
 
         function init() {
             getmemberdetail();
-            $state.confirmdev = confirmdev; 
+            $scope.confirmdev = confirmdev; 
         }
 
         function getmemberdetail() {
@@ -31,9 +31,9 @@ app.controller('EnrollMemberList', ['$scope', '$state', '$rootScope', '$statePar
         function confirmdev(username) {
 
             var project_id = $stateParams.id;
-            var username = $scope.username;
+            var username = username;
 
-            ProjectFactory.create().post({
+            ProjectFactory.confirmdev().post({
 
                 'project_id': project_id,
                 'username': username,
