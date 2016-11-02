@@ -9,7 +9,7 @@ app.controller('EnrollMemberList', ['$scope', '$state', '$rootScope', '$statePar
 
         function init() {
             getmemberdetail();
-            $state.confirmdev = confirmdev; 
+            $scope.confirmdev = confirmdev; 
         }
 
         function getmemberdetail() {

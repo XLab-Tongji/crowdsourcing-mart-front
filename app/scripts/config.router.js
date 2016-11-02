@@ -261,8 +261,6 @@ angular.module('crowdsourcing')
                         }]
                     }
                 })
-
-               
         }
     ])
     .run();
