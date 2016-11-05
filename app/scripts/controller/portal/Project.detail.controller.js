@@ -1,6 +1,7 @@
 
 'use strict';
 
+
 app.controller('ProjectDetailController', ['$scope', '$state', '$rootScope', '$stateParams', 'AlertTool', 'ToasterTool',
     'ProjectFactory', 'SessionFactory', 'SessionService', 'EnrollService', function ($scope, $state, $rootScope, $stateParams, AlertTool, ToasterTool,
         ProjectFactory, SessionFactory, SessionService, EnrollService) {
@@ -30,6 +31,7 @@ app.controller('ProjectDetailController', ['$scope', '$state', '$rootScope', '$s
                 if (data.result != null) {
                     var resultbyid = data.result;
                     $scope.resultbyidlist = resultbyid[0];
+                    //$scope.resultbyidlist.dis = decode($scope.resultbyidlist.dis);
 
                 } else {
                     ToasterTool.error('获取失败', '请重试');

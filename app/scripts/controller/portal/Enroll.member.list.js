@@ -10,6 +10,8 @@ app.controller('EnrollMemberList', ['$scope', '$state', '$rootScope', '$statePar
         function init() {
             getmemberdetail();
             $scope.confirmdev = confirmdev; 
+            $scope.confirmButtonTxt = "确认";
+
         }
 
         function getmemberdetail() {
@@ -32,8 +34,10 @@ app.controller('EnrollMemberList', ['$scope', '$state', '$rootScope', '$statePar
 
             var project_id = $stateParams.id;
             var username = username;
+            if($scope.confirmButtonTxt == '确认'){
+                $scope.confirmButtonTxt = '取消'
 
-            ProjectFactory.confirmdev().post({
+                 ProjectFactory.confirmdev().post({
 
                 'project_id': project_id,
                 'username': username,
@@ -45,13 +49,26 @@ app.controller('EnrollMemberList', ['$scope', '$state', '$rootScope', '$statePar
 
                     } else {
                         ToasterTool.error('错误', data.message);
+                          //$scope.confirmButtonTxt = 'cancel';
                     }
                 })
+
+            }else{
+                $scope.confirmButtonTxt = '确认';
+            }
+        
         }
 
+        
+    
 
+        
 
 
 
 
     }]);
+
+
+
+

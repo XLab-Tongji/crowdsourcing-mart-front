@@ -40,7 +40,7 @@ app.controller('ProjectController', ['$scope', '$state', '$rootScope', 'AlertToo
                 'delivery_cycle': delivery_cycle,
                 'warranty_cycle': warranty_cycle,
                 'address': address,
-                'description': description,
+                'description': encodeURI(description),
                 'username': project_user_name,
                 // 'enroll_stop_time':enroll_stop_time
                 //  'file':file;
