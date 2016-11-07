@@ -24,6 +24,7 @@ app.controller('RegisterController', ['$scope', '$state', '$rootScope', 'AlertTo
                 'email': email,
                 'mobile': mobile,
                 'ext_params': ext_params
+
             }).$promise
                 .then(function (data) {
                     if (data.result == 1) {
