@@ -12,6 +12,7 @@ angular.module('crowdsourcing')
       'views/portal',
       '/account/login',
       '/project/all',
+      '/project/page'
       
 
     ];

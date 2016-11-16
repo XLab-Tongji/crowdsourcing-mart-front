@@ -87,15 +87,23 @@ angular.module('crowdsourcing')
                         }
                     })
             },
-            confirmdev:function(){
-                return $resource(project_base_Url + '/develop/confirm',{},
-                {
-                    'post':{
-                        method:'POST'
-                    }
-                })
+            confirmdev: function () {
+                return $resource(project_base_Url + '/develop/confirm', {},
+                    {
+                        'post': {
+                            method: 'POST'
+                        }
+                    })
+            },
+            projectpage: function () {
+                return $resource(project_base_Url + '/page/:pageSize/:pageNumber', {pageSize:"@pageSize",pageNumber:"@pageNumber"},
+                    {
+                        'post': {
+                            method: 'POST'
+                        }
+                    })
             }
-            
+
         };
 
     });

@@ -73,4 +73,16 @@ app.controller('ProjectController', ['$scope', '$state', '$rootScope', 'AlertToo
 
         }
 
+
+//根据页码获取所有项目
+        function getprojectbypage(){
+
+            
+
+
+
+
+
+        }
+
     }]);

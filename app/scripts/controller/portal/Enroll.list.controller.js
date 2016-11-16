@@ -8,28 +8,52 @@ app.controller('EnrollListController', ['$scope', '$state', '$rootScope', 'Alert
         init();
 
         function init() {
-            getalllist();
-            $scope.getprojectdetail = getprojectdetail;
-            $scope.enrollproject = enrollproject;
-            // $scope.displayenrollcount=displayenrollcount;
+            // getalllist();
 
+         
+            getallprojectlistbypage(1);
+            $scope.getprojectdetail = getprojectdetail;
+            $scope.getallprojectlistbypage=getallprojectlistbypage;
+            $scope.enrollproject = enrollproject;
+            
+            // $scope.displayenrollcount=displayenrollcount;
         }
 
-        function getalllist() {
-            ProjectFactory.list().get({
+        // function getalllist() {
+        //     ProjectFactory.list().get({
 
-            }).$promise.then(function (data) {
-                if (data.result != null) {
-                    var result = data.result;
-                    $scope.result = result;
+        //     }).$promise.then(function (data) {
+        //         if (data.result != null) {
+        //             var result = data.result;
+        //             $scope.result = result;
 
-                } else {
-                    ToasterTool.error('获取失败', '请重试');
+        //         } else {
+        //             ToasterTool.error('获取失败', '请重试');
+        //         }
+        //     })
+
+
+
+        // }
+
+
+/*分页获取项目页面显示
+pagesize 页面显示数量
+count页码数
+*/
+        function getallprojectlistbypage(count){
+
+            // count=count+1;
+
+            ProjectFactory.projectpage().get({
+                'pageSize':8,
+                'pageNumber':count
+            }).$promise.then(function (data){
+                if(data.result!=null){
+                    var result=data.result[1];
+                    $scope.result=result;
                 }
             })
-
-
-
         }
 
 
