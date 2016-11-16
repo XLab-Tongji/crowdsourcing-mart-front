@@ -35,6 +35,7 @@ angular.module('crowdsourcing')
                     }
                 })
             },
+ 
             userlistbyid: function () {
                 return $resource(project_base_Url + '/list/:user/:id', { user: '@user', id: '@id' }, {
                     'get': {
@@ -95,6 +96,13 @@ angular.module('crowdsourcing')
                     }
                 })
             }
+            // upload:function(){
+            //     return $resource(project_base_Url + '/add/file', {}，{
+            //         'post':{
+            //             method: 'POST'
+            //         }
+            //     })
+            // }
             
         };
 

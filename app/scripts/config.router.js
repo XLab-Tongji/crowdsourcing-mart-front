@@ -50,7 +50,9 @@ angular.module('crowdsourcing')
                             return $ocLazyLoad.load([
                                 'scripts/controller/portal/Project.controller.js',
                                 'scripts/factory/Project.factory.js',
-                                'scripts/factory/Session.factory.js'
+                                'scripts/factory/Session.factory.js',
+                                'bower_components/ng-file-upload/ng-file-upload-shim.js', 
+                                'bower_components/ng-file-upload/ng-file-upload.js',
                             ]);
                         }]
                     }
