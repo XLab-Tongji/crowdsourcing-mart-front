@@ -24,6 +24,33 @@ function pageTitle($rootScope, $timeout) {
     }
 };
 
+
+
+function dropzone(){
+     return {
+                restrict: 'A',
+                link: function (scope, element, attrs) {
+
+                    var dropzone = new Dropzone(element[0], scope.dropzoneConfig);
+
+                    angular.forEach(scope.dropzoneEventHandlers, function (handler, event) {
+                        dropzone.on(event, handler);
+                    });
+
+                    scope.processDropzone = function () {
+                        dropzone.processQueue();
+                    };
+
+                    scope.resetDropzone = function () {
+                        dropzone.removeAllFiles();
+                    };
+                }
+            }
+}
+
+
+
+
 /**
  * sideNavigation - Directive for run metsiMenu on sidebar navigation
  */
@@ -156,6 +183,7 @@ function iboxToolsFullScreen($timeout) {
 angular
     .module('crowdsourcing')
     .directive('pageTitle', pageTitle)
+    .directive('dropzone',dropzone)
     .directive('sideNavigation', sideNavigation)
     .directive('iboxTools', iboxTools)
     .directive('minimalizaSidebar', minimalizaSidebar)

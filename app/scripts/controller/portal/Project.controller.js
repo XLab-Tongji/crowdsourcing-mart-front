@@ -1,15 +1,18 @@
 'use strict';
 
 app.controller('ProjectController', ['$scope', '$state', '$rootScope', 'AlertTool', 'ToasterTool',
-    'ProjectFactory', 'SessionFactory', 'SessionService', function ($scope, $state, $rootScope, AlertTool, ToasterTool,
-        ProjectFactory, SessionFactory, SessionService) {
+    'ProjectFactory', 'SessionFactory', 'SessionService','Upload', function ($scope, $state, $rootScope, AlertTool, ToasterTool,
+        ProjectFactory, SessionFactory, SessionService,Upload) {
 
         init();
 
         function init() {
             $scope.addproject = addproject;
             getprojectlist();
+          
+            
         }
+        
         function deleteform() {
             delete $scope.project_name;
             delete $scope.project_type;
@@ -21,43 +24,41 @@ app.controller('ProjectController', ['$scope', '$state', '$rootScope', 'AlertToo
 
         }
 
+    
 
-        function addproject() {
+        var addproject = function(file) {
+
             var project_name = $scope.project_name;
-            var project_type = $scope.project_type;
-            var cost = $scope.cost;
-            var delivery_cycle = $scope.delivery_cycle;
-            var warranty_cycle = $scope.warranty_cycle;
-            var address = $scope.address;
-            var description = $scope.description;
-            var project_user_name = SessionService.getCurrentUser();
-            var enroll_stop_time = $scope.enroll_stop_time;
+            var data = {};
+                data.project_type = $scope.project_type;
+                data.cost = $scope.cost;
+                data.delivery_cycle = $scope.delivery_cycle;
+                data.warranty_cycle = $scope.warranty_cycle;
+                data.address = $scope.address;
+                data.description = $scope.description;
+                data.project_user_name = SessionService.getCurrentUser();
+                data.enroll_stop_time = $scope.enroll_stop_time;
+                data.file = file;
 
-            ProjectFactory.create().post({
-                'project_name': project_name,
-                'project_type': project_type,
-                'cost': cost,
-                'delivery_cycle': delivery_cycle,
-                'warranty_cycle': warranty_cycle,
-                'address': address,
-                'description': encodeURI(description),
-                'username': project_user_name,
-                // 'enroll_stop_time':enroll_stop_time
-                //  'file':file;
-            }).$promise
-                .then(function (data) {
-                    if (data.result == 1) {
-                        ToasterTool.success('需求创建成功');
-                        //$state.go('auth');
+            file.upload = Upload.upload({
+            url: 'http://localhost:8080/api/file/icon',
+             data: data
+            });
 
-                        deleteform();
+            file.upload.then(function (response) {
 
-                    } else {
-                        ToasterTool.error('错误', data.message);
-                    }
-                });
+                ToasterTool.error('获取失败', '请重试');
 
-        }
+            }, function (response) {
+              if (response.status > 0)
+                ToasterTool.error('创建失败', '请重试');
+            }, function (evt) {
+              // Math.min is to fix IE which reports 200% sometimes
+              file.progress = Math.min(100, parseInt(100.0 * evt.loaded / evt.total));
+            });
+            }
+
+
 
         function getprojectlist() {
 
@@ -73,16 +74,7 @@ app.controller('ProjectController', ['$scope', '$state', '$rootScope', 'AlertToo
 
         }
 
-
-//根据页码获取所有项目
-        function getprojectbypage(){
-
-            
-
-
-
-
-
-        }
-
     }]);
+
+
+

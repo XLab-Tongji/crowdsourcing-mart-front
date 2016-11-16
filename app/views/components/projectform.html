@@ -3,33 +3,17 @@
 		<div class="ibox float-e-margins">
 			<div class="ibox-title">
 				<h5>创建众包项目 <small>请按照规范填写项目需求</small></h5>
-				<!-- <div class="ibox-tools">
-                    <a class="collapse-link">
-                        <i class="fa fa-chevron-up"></i>
-                    </a>
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-wrench"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#">Config option 1</a>
-                        </li>
-                        <li><a href="#">Config option 2</a>
-                        </li>
-                    </ul>
-                    <a class="close-link">
-                        <i class="fa fa-times"></i>
-                    </a>
-                </div> -->
+		
 			</div>
 			<div class="ibox-content">
-				<form method="get" class="form-horizontal">
+				<form method="get" name="form" class="form-horizontal">
 					<div class="form-group"><label class="col-sm-2 control-label">项目名称</label>
 
-						<div class="col-md-3"><input type="text" class="form-control" ng-model="project_name"></div>
+						<div class="col-md-3"><input type="text" class="form-control" ng-model="project_name" name="project_name" required></div>
 					</div>
 					<div class="form-group"><label class="col-sm-2 control-label">项目开发类型</label>
 
-						<div class="col-md-3"><select class="form-control m-b" ng-model="project_type">
+						<div class="col-md-3"><select class="form-control m-b" ng-model="project_type" required>
                             <option>Android</option>
                             <option>IOS</option>
                             <option>Web</option>
@@ -42,7 +26,7 @@
 					<div class="hr-line-dashed"></div>
 					<div class="form-group"><label class="col-sm-2 control-label">项目金额 <small> (元)</small></label>
 
-						<div class="col-md-3"><input type="text" class="form-control" ng-model="cost"></div>
+						<div class="col-md-3"><input type="text" class="form-control" ng-model="cost" required></div>
 
 
 					</div>
@@ -50,11 +34,11 @@
 
 					<div class="form-group"><label class="col-sm-2 control-label">项目交付日期<small> (天)</small></label>
 
-						<div class="col-md-3"><input type="text" class="form-control" ng-model="delivery_cycle"></div>
+						<div class="col-md-3"><input type="text" class="form-control" ng-model="delivery_cycle" required></div>
 					</div>
 					<div class="form-group"><label class="col-sm-2 control-label">项目质保日期<small> (天)</small></label>
 
-						<div class="col-md-3"><input type="text" class="form-control" ng-model="warranty_cycle"></div>
+						<div class="col-md-3"><input type="text" class="form-control" ng-model="warranty_cycle" required></div>
 					</div>
 
 					<!--<div class="form-group"><label class="col-sm-2 control-label">项目截止日期<small> (天)</small></label>
@@ -71,7 +55,7 @@
 
 					<div class="form-group"><label class="col-sm-2 control-label">所在地</label>
 
-						<div class="col-md-3"><select class="form-control m-b" ng-model="address">
+						<div class="col-md-3"><select class="form-control m-b" ng-model="address" required>
                             <option>上海市</option>
                             <option>北京市</option>
                             <option>重庆市</option>
@@ -83,7 +67,7 @@
 					<div class="hr-line-dashed"></div>
 					<div class="form-group"><label class="col-sm-2 control-label">项目描述</label>
 
-						<div class="col-md-5"><textarea class="form-control" ng-model="description"></textarea></div>
+						<div class="col-md-5"><textarea class="form-control" ng-model="description"></textarea required></div>
 					</div>
 
 					<div class="hr-line-dashed"></div>
@@ -91,18 +75,39 @@
 					<div class="form-group"><label class="col-sm-2 control-label">附件上传</label>
 
 						<div class="input-group col-md-3">
-							<input type="text" class="form-control" ng-model="file"> <span class="input-group-btn">
-                      <button  class="btn btn-primary">选择文件</button> </span></div>
+					     <br>
+						      <input type="file" ngf-select ng-model="file" name="file" ngf-max-size="5MB" required ngf-model-invalid="errorFile">
+						      <i ng-show="myForm.file.$error.required">*required</i><br>
+						      <i ng-show="myForm.file.$error.maxSize">File too large 
+						          {{errorFile.size / 1000000|number:1}}MB: max 5M</i>
+						      <!-- <img ng-show="myForm.file.$valid" ngf-thumbnail="file" class="thumb">  -->
+						      <button ng-click="file = null" ng-show="file">Remove</button>
+						      <br>
+						      
+						      <span class="progress" ng-show="file.progress >= 0">
+						        <div style="width:{{file.progress}}%" 
+						            ng-bind="file.progress + '%'"></div>
+						      </span>
+						      <span ng-show="file.result">Upload Successful</span>
+						      <span class="err" ng-show="errorMsg">{{errorMsg}}</span>
+
+					          
 
 					</div>
 					<div class="hr-line-dashed"></div>
 					<div class="form-group">
 						<div class="col-sm-4 col-sm-offset-2">
-							<button class="btn btn-white" type="submit">取消 </button>
-							<button class="btn btn-primary" type="submit" ng-click="addproject()">提交</button>
+							<button class="btn btn-white" name="clear" ng-click="reloadPage">重置</button>
+							<button class="btn btn-primary" type="submit" ng-click="addproject(file)" ng-disabled="form.$invalid">提交</button>
+
 						</div>
 					</div>
 				</form>
+
+				
+
+
+
 			</div>
 		</div>
 	</div>
