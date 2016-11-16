@@ -26,36 +26,35 @@ app.controller('ProjectController', ['$scope', '$state', '$rootScope', 'AlertToo
 
     
 
-        var addproject = function(file) {
+         function addproject(file) {
 
-            var project_name = $scope.project_name;
             var data = {};
+                data.project_name=$scope.project_name;
                 data.project_type = $scope.project_type;
                 data.cost = $scope.cost;
                 data.delivery_cycle = $scope.delivery_cycle;
                 data.warranty_cycle = $scope.warranty_cycle;
                 data.address = $scope.address;
                 data.description = $scope.description;
-                data.project_user_name = SessionService.getCurrentUser();
-                data.enroll_stop_time = $scope.enroll_stop_time;
                 data.file = file;
+                data.username=SessionService.getCurrentUser();
 
             file.upload = Upload.upload({
-            url: 'http://localhost:8080/api/file/icon',
+            url: 'http://localhost:8080/api/project/add',
              data: data
             });
 
             file.upload.then(function (response) {
 
-                ToasterTool.error('获取失败', '请重试');
+               if(response.status==200){
+                   ToasterTool.success("创建成功");
+               }
 
-            }, function (response) {
-              if (response.status > 0)
-                ToasterTool.error('创建失败', '请重试');
             }, function (evt) {
               // Math.min is to fix IE which reports 200% sometimes
               file.progress = Math.min(100, parseInt(100.0 * evt.loaded / evt.total));
             });
+
             }
 
 

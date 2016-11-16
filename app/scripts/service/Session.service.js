@@ -36,6 +36,11 @@ angular.module('crowdsourcing').service('SessionService',
         return null;
       }
     };
+    this.getCurrentUserID=function(){
+      if($localStorage.currentUser){
+        
+      }
+    }
 
     this.headers = function () {
       return { 'PRIVATE-TOKEN': this.getToken() }
