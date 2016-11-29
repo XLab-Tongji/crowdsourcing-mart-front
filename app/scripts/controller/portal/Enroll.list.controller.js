@@ -10,12 +10,12 @@ app.controller('EnrollListController', ['$scope', '$state', '$rootScope', 'Alert
         function init() {
             // getalllist();
 
-         
+
             getallprojectlistbypage(1);
             $scope.getprojectdetail = getprojectdetail;
-            $scope.getallprojectlistbypage=getallprojectlistbypage;
+            $scope.getallprojectlistbypage = getallprojectlistbypage;
             $scope.enrollproject = enrollproject;
-            
+
             // $scope.displayenrollcount=displayenrollcount;
         }
 
@@ -37,23 +37,39 @@ app.controller('EnrollListController', ['$scope', '$state', '$rootScope', 'Alert
         // }
 
 
-/*分页获取项目页面显示
-pagesize 页面显示数量
-count页码数
-*/
-        function getallprojectlistbypage(count){
+        /*分页获取项目页面显示
+        pagesize 页面显示数量
+        count页码数
+        */
+        function getallprojectlistbypage(count) {
 
             // count=count+1;
 
             ProjectFactory.projectpage().get({
-                'pageSize':8,
-                'pageNumber':count
-            }).$promise.then(function (data){
-                if(data.result!=null){
-                    var result=data.result[1];
-                    $scope.result=result;
+                'pageSize': 8,
+                'pageNumber': count
+            }).$promise.then(function (data) {
+                if (data.result != null) {
+                    var result = data.result[1];
+                    var pagedata=data.result[0].totalPage;
+                    var pagenow=data.result[0].currentPage;
+                    $scope.pagenow=pagenow;
+                    $scope.result = result;
+                    $scope.pageInfo=arrayGenerate(pagedata);
                 }
+
             })
+        }
+
+        //数组生成函数
+        function arrayGenerate(number){
+            var result=new Array();
+            for(var i=0;i<number;i++){
+
+                result[i]=i+1;
+
+            }
+            return result;
         }
 
 
@@ -76,7 +92,7 @@ count页码数
                 }
             })
 
-        
+
 
 
         }
