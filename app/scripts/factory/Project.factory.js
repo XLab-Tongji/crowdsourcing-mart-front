@@ -8,7 +8,7 @@ angular.module('crowdsourcing')
         var project_base_Url = base_Url + '/project';
         return {
             create: function () {
-                return $resource(project_base_Url + '/add', {}, {
+                return $resource(project_base_Url + '/add?project_type=:project_type&cost=:cost&delivery_cycle=:delivery_cycle&warranty_cycle=:warranty_cycle&address=:address&description=:description&project_name=:project_name&username=:username', {project_type:'@project_type',cost:'@cost',delivery_cycle:'@delivery_cycle',warranty_cycle:'@warranty_cycle',description:'@description',address:'@address',project_name:'@project_name',username:'@username'}, {
                     'post': {
                         method: 'POST'
                     }

@@ -26,7 +26,7 @@ app.controller('ProjectController', ['$scope', '$state', '$rootScope', 'AlertToo
 
     
 
-         function addproject(file) {
+         function addproject() {
 
             var data = {};
                 data.project_name=$scope.project_name;
@@ -36,24 +36,52 @@ app.controller('ProjectController', ['$scope', '$state', '$rootScope', 'AlertToo
                 data.warranty_cycle = $scope.warranty_cycle;
                 data.address = $scope.address;
                 data.description = $scope.description;
-                data.file = file;
+                // data.file = file;
                 data.username=SessionService.getCurrentUser();
 
-            file.upload = Upload.upload({
-            url: 'http://localhost:8080/api/project/add',
-             data: data
-            });
+// console.log(data.warranty_cycle+" "+)
+                ProjectFactory.create().post({
+                
+                    'project_type':data.project_type,
+                    'cost':data.cost,
+                    'delivery_cycle':data.delivery_cycle,
+                    'warranty_cycle':data.warranty_cycle,
+                    'address':data.address,
+                    'description':data.description,
+                    'project_name':data.project_name,
+                    'username':data.username
 
-            file.upload.then(function (response) {
 
-               if(response.status==200){
-                   ToasterTool.success("创建成功");
-               }
 
-            }, function (evt) {
-              // Math.min is to fix IE which reports 200% sometimes
-              file.progress = Math.min(100, parseInt(100.0 * evt.loaded / evt.total));
-            });
+                }).$promise.then(function (data) {
+                    console.log(data);
+                    if (data.status == 200) {
+                        ToasterTool.success('需求创建成功');
+                        $state.go('app.main.prolist');
+                    } else{//} if (data.status == 500) {
+                        ToasterTool.error('需求创建失败');
+                    }
+            })
+
+
+
+
+
+            // file.upload = Upload.upload({
+            // url: 'http://localhost:8080/api/project/add',
+            //  data: data
+            // });
+
+            // file.upload.then(function (response) {
+
+            //    if(response.status==200){
+            //        ToasterTool.success("创建成功");
+            //    }
+
+            // }, function (evt) {
+        
+            //   file.progress = Math.min(100, parseInt(100.0 * evt.loaded / evt.total));
+            // });
 
             }
 
