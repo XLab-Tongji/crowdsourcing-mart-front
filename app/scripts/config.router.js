@@ -41,23 +41,129 @@ angular.module('crowdsourcing')
                         }]
                     }
                 })
-                .state('app.main.form', {
-                    url: "/form",
-                    controller: 'ProjectController',
-                    templateUrl: "views/components/projectform.html",
+                // .state('app.main.form', {
+                //     url: "/form",
+                //     controller: 'ProjectController',
+                //     templateUrl: "views/components/projectform.html",
+                //     resolve: {
+                //         controller: ['$ocLazyLoad', function ($ocLazyLoad) {
+                //             return $ocLazyLoad.load([
+                //                 'scripts/controller/portal/Project.controller.js',
+                //                 'scripts/factory/Project.factory.js',
+                //                 'scripts/factory/Session.factory.js',
+                //                 'bower_components/ng-file-upload/ng-file-upload-shim.js', 
+                //                 'bower_components/ng-file-upload/ng-file-upload.js',
+                //             ]);
+                //         }]
+                //     }
+                // })
+                //estimation component
+                .state('app.main.estimation', {
+                    url: "/estimation",
+                    controller: 'EstimationIndexController',
+                    templateUrl: "views/components/estimation/estimationindex.html",
                     resolve: {
                         controller: ['$ocLazyLoad', function ($ocLazyLoad) {
                             return $ocLazyLoad.load([
-                                'scripts/controller/portal/Project.controller.js',
-                                'scripts/factory/Project.factory.js',
+                                'scripts/controller/portal/estimation/Estimation.index.controller.js',
+                                'scripts/factory/estimation/Estimation.index.factory.js',
                                 'scripts/factory/Session.factory.js',
                                 'bower_components/ng-file-upload/ng-file-upload-shim.js', 
                                 'bower_components/ng-file-upload/ng-file-upload.js',
                             ]);
                         }]
                     }
-                })
-                .state('portal', {
+                }).state('app.main.estimationrecords', {
+                    url: "/estimation",
+                    controller: 'EstimationRecordsController',
+                    templateUrl: "views/components/estimation/estimationrecords.html",
+                    resolve: {
+                        controller: ['$ocLazyLoad', function ($ocLazyLoad) {
+                            return $ocLazyLoad.load([
+                                'scripts/controller/portal/estimation/Estimation.records.controller.js',
+                                'scripts/factory/estimation/Estimation.records.factory.js',
+                                'scripts/factory/Session.factory.js',
+                                'bower_components/ng-file-upload/ng-file-upload-shim.js', 
+                                'bower_components/ng-file-upload/ng-file-upload.js',
+                            ]);
+                        }]
+                    }
+                }).state('app.main.estimationreport', {
+                    url: "/report",
+                    controller: 'EstimationReportController',
+                    templateUrl: "views/components/estimation/estimationreport.html",
+                    resolve: {
+                        controller: ['$ocLazyLoad', function ($ocLazyLoad) {
+                            return $ocLazyLoad.load([
+                                'scripts/controller/portal/estimation/Estimation.report.controller.js',
+                                'scripts/factory/estimation/Estimation.report.factory.js',
+                                'scripts/factory/Session.factory.js',
+                                'bower_components/ng-file-upload/ng-file-upload-shim.js', 
+                                'bower_components/ng-file-upload/ng-file-upload.js',
+                            ]);
+                        }]
+                    }
+                }).state('app.main.estimationform1', {
+                    url: "/form1",
+                    controller: 'EstimationController1',
+                    templateUrl: "views/components/estimation/estimationstep1.html",
+                    resolve: {
+                        controller: ['$ocLazyLoad', function ($ocLazyLoad) {
+                            return $ocLazyLoad.load([
+                                'scripts/controller/portal/estimation/Estimation.controller1.js',
+                                'scripts/factory/estimation/Estimation.factory1.js',
+                                'scripts/factory/Session.factory.js',
+                                'bower_components/ng-file-upload/ng-file-upload-shim.js', 
+                                'bower_components/ng-file-upload/ng-file-upload.js',
+                            ]);
+                        }]
+                    }
+                }).state('app.main.estimationform2', {
+                    url: "/form2",
+                    controller: 'EstimationController2',
+                    templateUrl: "views/components/estimation/estimationstep2.html",
+                    resolve: {
+                        controller: ['$ocLazyLoad', function ($ocLazyLoad) {
+                            return $ocLazyLoad.load([
+                                'scripts/controller/portal/estimation/Estimation.controller2.js',
+                                'scripts/factory/estimation/Estimation.factory2.js',
+                                'scripts/factory/Session.factory.js',
+                                'bower_components/ng-file-upload/ng-file-upload-shim.js', 
+                                'bower_components/ng-file-upload/ng-file-upload.js',
+                            ]);
+                        }]
+                    }
+                }).state('app.main.estimationform3', {
+                    url: "/form3",
+                    controller: 'EstimationController3',
+                    templateUrl: "views/components/estimation/estimationstep3.html",
+                    resolve: {
+                        controller: ['$ocLazyLoad', function ($ocLazyLoad) {
+                            return $ocLazyLoad.load([
+                                'scripts/controller/portal/estimation/Estimation.controller3.js',
+                                'scripts/factory/estimation/Estimation.factory3.js',
+                                'scripts/factory/Session.factory.js',
+                                'bower_components/ng-file-upload/ng-file-upload-shim.js', 
+                                'bower_components/ng-file-upload/ng-file-upload.js',
+                            ]);
+                        }]
+                    }
+                }).state('app.main.estimationform4', {
+                    url: "/form4",
+                    controller: 'EstimationController4',
+                    templateUrl: "views/components/estimation/estimationstep4.html",
+                    resolve: {
+                        controller: ['$ocLazyLoad', function ($ocLazyLoad) {
+                            return $ocLazyLoad.load([
+                                'scripts/controller/portal/estimation/Estimation.controller4.js',
+                                'scripts/factory/estimation/Estimation.factory4.js',
+                                'scripts/factory/Session.factory.js',
+                                'bower_components/ng-file-upload/ng-file-upload-shim.js', 
+                                'bower_components/ng-file-upload/ng-file-upload.js',
+                            ]);
+                        }]
+                    }
+                }).state('portal', {
                     url: "/portal",
                     templateUrl: "views/portal/portal.html",
                     data: { pageTitle: '首页', specialClass: 'landing-page' },
