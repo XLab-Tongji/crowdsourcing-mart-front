@@ -1,0 +1,54 @@
+<div class="middle-box text-center loginscreen   animated fadeInDown">
+    <div>
+        <div>
+
+            <!-- <h1 class="logo-name">X</h1> -->
+
+        </div>
+        <h2>欢迎加入众包平台</h2>
+        <p></p>
+        <form class="m-t" role="form" name="regForm" >
+
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="用户名" ng-model="registerUserName" required>
+            </div>
+
+            <div class="form-group" ng-class="{'has-success':regForm.password.$valid&&regForm.password.$touched,'has-error':regForm.password.$invalid&&regForm.password.$touched}">
+                <input type="password" class="form-control" name="password" placeholder="请输入密码：请以字母开头"  ng-model="registerPassword" ng-pattern="/^[A-Za-z]{1}[0-9A-Za-z_]{2,29}$/" ng-minlength="4" ng-maxlength="16" required>
+                <p class="help-block has-error" ng-show="regForm.password.$error.pattern&&regForm.password.$touched">一定要包含数字、字母和下划线</p>
+                <p class="help-block has-error" ng-show="regForm.password.$error.minlength||regForm.password.$error.maxlength">密码为4-16位</p>
+            </div>
+
+            <div class="form-group" ng-class="{'has-success':regForm.confirmPassword.$valid&&regForm.confirmPassword.$touched,'has-error':(regForm.confirmPassword.$invalid&&regForm.confirmPassword.$touched)||(user.password!=user.confirmPassword&&regForm.confirmPassword.$touched)}">
+                <input type="password" class="form-control" name="confirmPassword" placeholder="确认密码:只能是数字、字母和下划线" ng-model="confirmPassword" ng-minlength="4" ng-maxlength="16" ng-pattern="/^[A-Za-z]{1}[0-9A-Za-z_]{2,29}$/" required>
+                <p class="help-block has-error" ng-show="regForm.confirmPassword.$error.pattern&&regForm.confirmPassword.$touched">一定要包含数字、字母和下划线</p>
+                <p class="help-block has-error" ng-show="regForm.confirmPassword.$error.minlength||regForm.confirmPassword.$error.maxlength">确认密码为4-16位</p>
+                <p class="help-block has-error" ng-show="registerPassword!=confirmPassword&&regForm.confirmPassword.$touched">两次密码不一致</p>
+            </div>
+    
+            <div class="form-group">
+                <input type="text" name="phone" class="form-control" placeholder="电话" ng-minlength="11"
+                ng-model="registerPhone" ng-minlength="11" ng-maxlength="11" required>
+                <p class="help-block has-error" ng-show="regForm.phone.$error.minlength||regForm.phone.$error.maxlength">电话号码位数不足</p>
+            </div>
+
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="输入验证码" ng-model="registerName" style="float: left; width: 70%;" required>
+                <button class="btn btn-primary" style="float: right;margin-bottom: 8px;">发送验证码</button>
+            </div>
+
+            <div class="form-group">
+                <input type="email" name="email" class="form-control" placeholder="邮件" ng-model="registerEmail" required>
+            </div>
+
+            <div class="form-group">
+                <div class="checkbox i-checks"><label> <input type="checkbox"><i></i> 同意条款和协议 </label></div>
+            </div>
+            <button type="submit" class="btn btn-primary block full-width m-b" ng-disabled="form.$invalid" ng-click="register()">注册</button>
+
+            <p class="text-muted text-center"><small>已经有了账户？</small></p>
+            <a class="btn btn-sm btn-white btn-block" ui-sref="auth">马上登录</a>
+        </form>
+        <p class="m-t"> <small>Inspinia we app framework base on Bootstrap 3 &copy; 2014</small> </p>
+    </div>
+</div>

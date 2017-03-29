@@ -1,0 +1,68 @@
+<nav class="navbar-default navbar-static-side" role="navigation">
+	<div class="sidebar-collapse">
+		<ul side-navigation class="nav metismenu" id="side-menu">
+			<li class="nav-header">
+
+				<div class="profile-element" uib-dropdown>
+					<img alt="image" class="img-circle mid-image" ng-src="{{user.avatarUrl?user.avatarUrl:'/file/default.jpg'}}" />
+					<div>
+						<span class="clear">
+                              <span class="block m-t-xs">
+                                  <strong class="font-bold">{{user}}</strong>
+                        
+                  </div>
+                   <!--<ul uib-dropdown-menu class="animated fadeInRight m-t-xs">
+                      <li><a ui-sref="app.profile">Profile</a></li>
+                      <li><a ui-sref="app.contacts">Contacts</a></li>
+                      <li><a ui-sref="mailbox.inbox">Mailbox</a></li>
+                      <li class="divider"></li>
+                      <li><a ui-sref="login">Logout</a></li>
+                  </ul> -->
+              </div>
+              <div class="logo-element">
+                  X
+              </div>
+
+            </li>
+
+            <li ng-class="{active: $state.includes('app.main.form')}">
+                <a ui-sref="app.main.form"><i class="fa fa-tasks"></i> <span class="nav-label">创建需求</span> </a>
+			</li>
+			<li ng-class="{active: $state.includes('app.main.enrollist')}">
+				<a ui-sref="app.main.enrollist"><i class="fa fa-tasks"></i> <span class="nav-label">众包报名</span> </a>
+			</li>
+			<li ng-class="{active: $state.includes('app.main.prolist' || 'app.main.detail')}">
+				<a ui-sref="app.main.prolist"><i class="fa fa-tasks"></i> <span class="nav-label">我的发布</span> </a>
+			</li>
+			<li ng-class="{active: $state.includes('app.main.develoenrollpdetail')}">
+				<a ui-sref="app.main.develoenrollpdetail"><i class="fa fa-tasks"></i> <span class="nav-label">我的报名</span> </a>
+			</li>
+			<li ng-class="{active: $state.includes('app.main.paticipationdetail')}">
+				<a ui-sref="app.main.paticipationdetail"><i class="fa fa-tasks"></i> <span class="nav-label">我的开发</span> </a>
+			</li>
+			<li ng-class="{active: $state.includes('app.main.profile')}">
+				<a ui-sref="app.main.profile"><i class="fa fa-tasks"></i> <span class="nav-label">我的信息</span> </a>
+			</li>
+
+
+
+
+			<!--&lt;!&ndash; <li ng-class="{active: $state.includes('app.task')}">-->
+			<!--<a ui-sref="app.task"><i class="fa fa-comments-o"></i> <span class="nav-label">任务</span></a>-->
+			<!--</li> &ndash;&gt;-->
+			<!--<li ng-class="{active: $state.includes('app.group')}">-->
+			<!--<a ui-sref="app.group"><i class="fa fa-group"></i> <span class="nav-label">团队</span></a>-->
+			<!--</li>-->
+			<!--<li ng-class="{active: $state.includes('app.contact')}">-->
+			<!--<a ui-sref="app.contact.following"><i class="fa fa-user"></i> <span class="nav-label">好友</span></a>-->
+			<!--</li>-->
+			<!--<li ng-class="{active: $state.includes('app.notification')}">-->
+			<!--<a ui-sref="app.notification"><i class="fa fa-bell"></i> <span class="nav-label">通知</span></a>-->
+			<!--</li>-->
+			<!--<li ng-class="{active: $state.includes('app.configure')}">-->
+			<!--<a ui-sref="app.minor"><i class="fa fa-gears"></i> <span class="nav-label">设置</span></a>-->
+			<!--</li>-->
+		</ul>
+
+		</div>
+</nav>

@@ -1,0 +1,25 @@
+<div class="col-md-3" ng-repeat="x in result">
+	<div class="ibox">
+		<div class="ibox-content product-box">
+
+			<div>
+				<img ng-src="images/project/{{x.project_type}}.jpg" class="img-responsive">
+			</div>
+			<div class="product-desc">
+				<span class="product-price">
+                      ￥{{x.cost}}
+                  </span>
+				<small class="text-muted">{{x.project_type}}</small>
+				<a ng-click=getprojectdetail(x.id) class="product-name"> {{x.project_name}}</a>
+
+				<div class="small m-t-xs">
+					所在地：{{x.address}}
+				</div>
+				<div class="m-t text-righ">
+
+					<a ng-click=getprojectdetail(x.project_id) class="btn btn-xs btn-outline btn-primary">详情 <i class="fa fa-long-arrow-right"></i> </a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

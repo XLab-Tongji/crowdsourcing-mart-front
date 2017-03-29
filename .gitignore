@@ -1,13 +1,81 @@
+*~
+.#*
+dependency-reduced-pom.xml
+.DS_Store
+tmp/
+*.sw[op]
+classes/
+.new-relic/
+test.log
+logs/
+work/
+.bower-*
+
+# Eclipse
+# > the following should be created by `./gradlew eclipse`
+.classpath
+.project
+# > ignore all eclipse settings by default
+.settings
+# > except the following, primarily for formatting purposes
+!.settings/org.eclipse.jdt.core.prefs
+!.settings/org.eclipse.jdt.ui.prefs
+!.settings/org.eclipse.wst.html.core.prefs
+# > other misc eclipse artifacts
+.springBeans
+bin
+atlassian-ide-plugin.xml
+rebel.xml
+
+# IDEA
+.idea
+*.iml
+*.ipr
+*.iws
+out
+
+# Gradle
+.gradle
+gradle
+build
+/build
+
+gradle.properties
+application.properties
+
+# Structure101
+tiger.java.hsp
+.DS_Store
+*.eml
+*.userlibraries
+
+
+
+# war
+*.war
+.gradle
+
+
+
 /node_modules
 /dist
 /.tmp
 /.sass-cache
-bower_components/
 /__MACOSX
 .DS_Store
 
 .idea/
+nm.run.config.js
 
 *.md
 !README.md
-*.log
+
+api.html
+web-api.html
+
+/bower_components/
+/设计
+
+jsconfig.json
+
+.vscode/

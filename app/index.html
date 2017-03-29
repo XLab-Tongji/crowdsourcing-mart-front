@@ -1,0 +1,177 @@
+<!--
+* INSPINIA - Responsive Admin Theme
+* Copyright 2015 Webapplayers.com
+* Version 2.5
+*
+-->
+
+<!DOCTYPE html>
+<html ng-app="crowdsourcing">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<!-- Page title set in pageTitle directive -->
+	<title page-title></title>
+
+	<!-- Google Open Sans -->
+	<!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'> -->
+
+	<!-- build:css(.) styles/vendor.css -->
+	<!-- bower:css -->
+	<!-- Font awesome -->
+	<link href="bower_components/fontawesome/css/font-awesome.min.css" rel="stylesheet">
+
+	<!-- Bootstrap -->
+	<link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+	<link rel="stylesheet" href="bower_components/sweetalert/dist/sweetalert.css" type="text/css" />
+	<link rel="stylesheet" href="bower_components/AngularJS-Toaster/toaster.min.css" type="text/css" />
+	<link rel="stylesheet" href="bower_components/codemirror/lib/codemirror.css" type="text/css" />
+
+	<!-- Main Inspinia CSS files -->
+	<!-- endbower -->
+	<!-- endbuild -->
+
+	<!-- build:css({.tmp,app}) styles/style.css -->
+
+	<link href="styles/animate.css" rel="stylesheet">
+	<link href="styles/styles.css" rel="stylesheet" type="text/css">
+	<!-- <link href="styles/style.css" rel="stylesheet"> -->
+
+	<link href="lib/css/plugins/dropzone/basic.css" rel="stylesheet">
+	<link href="lib/css/plugins/dropzone/dropzone.css" rel="stylesheet">
+
+	<link href="styles/plugins/awesome-bootstrap-checkbox.css" rel="stylesheet">
+	<link href="styles/plugins/iCheck/custom.css" rel="stylesheet">
+
+	<link href="lib/css/plugins/slick/slick.css" rel="stylesheet">
+	<link href="lib/css/plugins/slick/slick-theme.css" rel="stylesheet">
+	<!-- <link type="text/css" href="styles/plugins/steps/jquery.steps.css" rel="stylesheet"> -->
+
+	<!--<link href="lib/css/plugins/footable/footable.core.css" rel="stylesheet">-->
+
+
+	<!-- <link href="bower_components/toastr/toastr.css" rel="stylesheet"> -->
+
+</head>
+
+<!-- ControllerAs syntax -->
+<!-- Main controller with serveral data used in Inspinia theme on diferent view -->
+
+<body class="{{$state.current.data.specialClass}}" landing-scrollspy id="page-top">
+
+	<!-- Main view  -->
+	
+	<div ui-view></div>
+
+	<!--======== All Javascript =========-->
+	<script src="bower_components/jquery/dist/jquery.js"></script>
+	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+
+	<!-- <script src="scripts/owl.carousel.min.js"></script>
+<script src="scripts/custom.js"></script> -->
+
+
+	<!-- build:js(.) scripts/vendor.js -->
+
+	<!-- jQuery and Bootstrap -->
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<!-- <script src="bower_components/jquery-ui/jquery-ui.min.js"></script> -->
+	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+	<!-- MetsiMenu -->
+	<script src="bower_components/metisMenu/dist/metisMenu.js"></script>
+
+	<!-- SlimScroll -->
+	<script src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+
+	<!-- projectmart_select -->
+	<script src="lib/css/chosen.css" type="stylesheet"></script>
+
+	<!-- Peace JS -->
+	 <script src="bower_components/pace/pace.min.js"></script> 
+	<toaster-container toaster-options="{'position-class': 'toast-top-right'}"></toaster-container>
+
+	<script src="bower_components/ng-file-upload/ng-file-upload-shim.js"></script> <!-- for no html5 browsers support -->
+
+
+	<!-- Angular scripts-->
+	<script src="bower_components/angular/angular.min.js"></script>
+	<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+	<script src="bower_components/angular-animate/angular-animate.js"></script>
+	<script src="bower_components/angular-resource/angular-resource.js"></script>
+	<script src="bower_components/angular-ui-validate/dist/validate.js"></script>
+	<script src="bower_components/angular-strap/dist/angular-strap.min.js"></script>
+	<script src="bower_components/angular-strap/dist/angular-strap.tpl.min.js"></script>
+	<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+	<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+	<script src="bower_components/oclazyload/dist/ocLazyLoad.js"></script>
+	<script src="bower_components/ngSweetAlert/SweetAlert.js"></script>
+	<script src="bower_components/sweetalert/dist/sweetalert.min.js"></script>
+	<script src="bower_components/AngularJS-Toaster/toaster.min.js"></script>
+	<script src="bower_components/angular-tooltips/dist/angular-tooltips.min.js"></script>
+	<script src="bower_components/ngstorage/ngStorage.js"></script>
+	<script src="bower_components/ngLocale/angular-locale_zh.js"></script>
+	<script src="bower_components/showdown/dist/showdown.min.js"></script>
+	<script src="bower_components/ng-showdown/dist/ng-showdown.min.js"></script>
+	<script src="bower_components/codemirror/lib/codemirror.js"></script>
+	<script src="bower_components/codemirror/mode/javascript/javascript.js"></script>
+	<script src="bower_components/angular-ui-codemirror/ui-codemirror.min.js"></script>
+	<script src="bower_components/blueimp-md5/js/md5.min.js"></script>
+	
+
+	<script src="bower_components/ng-file-upload/ng-file-upload.js"></script>
+	<script src="bower_components/ng-file-upload-shim/ng-file-upload-shim.js"></script>
+
+
+	<!-- Angular Dependiences -->
+	<!--                      -->
+	<!--                      -->
+	<!--                      -->
+
+	<!-- endbuild -->
+
+
+	<script src="bower_components/jquery/dist/jquery.js"></script>
+
+
+	<!-- build:js({.tmp,app}) scripts/scripts.js -->
+	<!-- Custom and plugin javascript -->
+
+	<script src="lib/libs/inspinia.js"></script>
+	<script src="lib/libs/jquery-ui-1.10.4.min.js"></script>
+	<script src="bower_components/pace/pace.js"></script>
+	<script src="bower_components/wow/dist/wow.min.js"></script>
+	<script src="lib/libs/dropzone/dropzone.js"></script>
+
+	<!--<script src="lib/libs/footable/footable.all.min.js"></script>-->
+	<!-- Anglar App Script -->
+	<script src="scripts/app.js"></script>
+	<script src="scripts/config.js"></script>
+	<script src="scripts/crowd.config.js"></script>
+	<script src="scripts/config.router.js"></script>
+	<script src="scripts/config.lazyLoad.js"></script>
+	<script src="scripts/directive/directives.js"></script>
+	<script src="scripts/service/AlertTool.service.js"></script>
+	<script src="scripts/service/ToasterTool.service.js"></script>
+	<script src="scripts/service/Session.service.js"></script>
+	<script src="scripts/interceptor/Auth.interceptor.js"></script>
+	<script src="scripts/service/Enroll.service.js"></script>
+
+	<!-- iCheck -->
+	<script src="bower_components/iCheck/icheck.min.js"></script>
+
+	<!-- slick carousel-->
+	<script src="lib/libs/slick/slick.min.js"></script>
+
+
+	<!-- endbuild -->
+
+</body>
+
+</html>

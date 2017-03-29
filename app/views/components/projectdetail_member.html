@@ -1,0 +1,52 @@
+
+ <div class="wrapper wrapper-content  animated fadeInRight">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox">
+                        <div class="ibox-title">
+                            <h5>已报名人员列表</h5>
+                            <div class="btn btn-xs btn-outline btn-primary" style="float: right;">编辑</div>
+                        </div>
+                        <div class="ibox-content">
+
+                            <div class="table-responsive">
+                            <table class="table table-hover issue-tracker">
+                                <tbody ng-repeat="x in memberdata">
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" id="multiselect"></td>
+                                    <td>
+                                        <span class="label label-primary">评级</span>
+                                    </td>
+                                    <td class="issue-info">
+                                        <a href="#">
+                                            {{x.username}}
+                                        </a>
+
+                                        <small>
+                                            {{x.dev_domain}}
+                                        </small>
+                                    </td>
+                                    <td>
+                                       报名时间 {{x.enroll_date| date:'medium'}}
+                                    </td>
+                                    <td class="text-right">
+                                        <button class="btn btn-white btn-xs"> 查看</button>
+                                        <button class="btn btn-white btn-xs " id="change" style="display: inline-block;float: right;" ng-click=confirmdev(x.username) value="确认" onOff="true">{{confirmButtonTxt}}</button>
+                              
+                                    </td>   
+                                </tr>
+                                
+                                </tbody>
+                            </table>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+              

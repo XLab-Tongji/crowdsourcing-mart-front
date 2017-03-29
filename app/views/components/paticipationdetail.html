@@ -1,0 +1,56 @@
+<!--我参加的项目页面-->
+
+ <div class="wrapper wrapper-content  animated fadeInRight">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox">
+                        <div class="ibox-title">
+                            <h5>已开发的项目列表</h5>
+                        </div>
+                        <div class="ibox-content">
+
+                            <div class="table-responsive">
+                            <table class="table table-hover issue-tracker">
+                                <tbody >
+                                <tr>
+                                    <td>项目标识</td>
+                                    <td>项目名称/类别</td>
+                                    <td>项目创建者</td>
+                                    <td>项目创建时间</td>
+                                    
+                                </tr>
+                                <tr ng-repeat="x in result">
+                                    <td>
+                                        <span class="label label-primary">项目标识</span>
+                                    </td>
+                                    <td class="issue-info">
+                                        <a href="#">
+                                            {{x.project_name}}
+                                        </a>
+
+                                        <small>
+                                            {{x.project_type}}
+                                        </small>
+                                    </td>
+                                    <td>
+                                         {{x.username}}
+                                    </td>
+                                    <td>
+                                        {{x.create_date |  date:'medium'}}
+                                    </td>
+                                    <td class="text-right">
+                                        <button class="btn btn-white btn-xs"> 查看</button>
+                                        <button class="btn btn-white btn-xs"> 取消报名</button>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>

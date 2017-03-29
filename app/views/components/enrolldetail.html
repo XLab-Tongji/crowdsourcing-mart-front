@@ -1,0 +1,83 @@
+<div class="row" >
+	<div class="col-lg-12">
+
+		<div class="ibox product-detail">
+			<div class="ibox-content">
+
+				<div class="row">
+
+					<div class="col-md-7">
+
+						<h2 class="font-bold m-b-xs">
+                            {{resultbyidlist.project_name}}
+						</h2>
+						<small>需求创建日期: {{resultbyidlist.create_date | date:'medium'}}</small>
+						<div class="m-t-md">
+							<h2 class="product-main-price">开发金额 ￥{{resultbyidlist.cost}}</h2>
+						</div>
+						<hr>
+
+						<h4>项目描述</h4>
+
+						<div class="small text-muted">
+                            {{resultbyidlist.description}}
+
+
+						</div>
+						<br/>
+						<h4>开发类型</h4>
+
+						<div class="small text-muted">
+                            {{resultbyidlist.project_type}}
+						</div>
+						<br/>
+						<h4>项目所在地</h4>
+
+						<div class="small text-muted">
+                            {{resultbyidlist.address}}
+						</div>
+
+                        </br>
+						<h4>项目报名人数</h4>
+
+						<div class="small text-muted">
+							{{count}}
+						</div>
+						
+
+						<br/>
+
+                        <hr>
+						<dl class="small m-t-md">
+							<dt>需求创建者</dt>
+							<dd>{{resultbyidlist.username}}</dd>
+							<dt>项目交付周期</dt>
+							<dd>{{resultbyidlist.delivery_cycle}}天</dd>
+							<dt>项目质保期</dt>
+							<dd>{{resultbyidlist.warranty_cycle}}天</dd>
+						</dl>
+						<hr>
+
+						<div>
+							<div class="btn-group">
+								<!--<button class="btn btn-primary btn-sm"><i class="fa fa-cart-plus"></i>报名</button>-->
+								<button class="btn btn-white btn-sm" ng-click="enrollproject()"><i class="fa fa-star"></i> 报名 </button>
+								<button class="btn btn-white btn-sm" ng-click="cancelenroll()"><i class="fa fa-envelope"></i> 取消 </button>
+							</div>
+						</div>
+
+
+
+					</div>
+				</div>
+
+			</div>
+			<div class="ibox-footer">
+				<span class="pull-right">
+                                距离项目截止报名- <i class="fa fa-clock-o"></i> 2天
+                            </span> The generated Lorem Ipsum is therefore always free
+			</div>
+		</div>
+
+	</div>
+</div>
