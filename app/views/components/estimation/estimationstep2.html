@@ -26,79 +26,10 @@
 
 						<div class="col-md-5"><textarea class="form-control" ng-model="description"></textarea required></div>
 					</div>
-
-					<!--<div class="form-group"><label class="col-sm-2 control-label">项目金额 <small> (元)</small></label>
-
-						<div class="col-md-3"><input type="text" class="form-control" ng-model="cost" required></div>
-
-
-					</div>
-
-
-					<div class="form-group"><label class="col-sm-2 control-label">项目交付日期<small> (天)</small></label>
-
-						<div class="col-md-3"><input type="text" class="form-control" ng-model="delivery_cycle" required></div>
-					</div>
-					<div class="form-group"><label class="col-sm-2 control-label">项目质保日期<small> (天)</small></label>
-
-						<div class="col-md-3"><input type="text" class="form-control" ng-model="warranty_cycle" required></div>
-					</div>
-
-					<div class="form-group"><label class="col-sm-2 control-label">项目截止日期<small> (天)</small></label>
-
-						<div class="form-group col-md-3" id="data_1">
-							<div class="input-group date">
-								<span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control" value="03/04/2014">
-							</div>
-						</div>
-					</div>-->
-
-
-					<!--<div class="hr-line-dashed"></div>
-
-					<div class="form-group"><label class="col-sm-2 control-label">所在地</label>
-
-						<div class="col-md-3"><select class="form-control m-b" ng-model="address" required>
-                            <option>上海市</option>
-                            <option>北京市</option>
-                            <option>重庆市</option>
-                            <option>天津市</option>
-                            <option>浙江省</option>
-                        </select>
-						</div>
-					</div>
-					<div class="hr-line-dashed"></div>
-					<div class="form-group"><label class="col-sm-2 control-label">项目描述</label>
-
-						<div class="col-md-5"><textarea class="form-control" ng-model="description"></textarea required></div>
-					</div>
-
-					<div class="hr-line-dashed"></div>-->
-
-					<!--<div class="form-group"><label class="col-sm-2 control-label">附件上传</label>
-
-						<div class="input-group col-md-3">
-					     <br>
-						      <input type="file" ngf-select ng-model="file" name="file" ngf-max-size="5MB" required ngf-model-invalid="errorFile">
-						      <i ng-show="myForm.file.$error.required">*required</i><br>
-						      <i ng-show="myForm.file.$error.maxSize">File too large 
-						          {{errorFile.size / 1000000|number:1}}MB: max 5M</i>
-						      <button ng-click="file = null" ng-show="file">Remove</button>
-						      <br>
-						      
-						      <span class="progress" ng-show="file.progress >= 0">
-						        <div style="width:{{file.progress}}" 
-						            ng-bind="file.progress + '%'"></div>
-						      </span>
-						      <span ng-show="file.result">Upload Successful</span>
-						      <span class="err" ng-show="errorMsg">{{errorMsg}}</span>
-
-					          
-
-					</div>-->
 					<div class="form-group" ng-controller="SendSafeMessageController">
       					<label class="col-md-2 control-label">步骤:</label>
       					<div class="col-md-10">
+
          					<div ng-repeat="reply in fchat.replies">
              					<div class="form-group">
                   					<div class="col-md-12">
@@ -121,6 +52,7 @@
                      					</div>
                  					</div>
             					</div>
+            					
          					</div>
          					<input type="hidden" id="replies" name="replies" value="{{fchat.combineReplies()}}" />
      					</div>
